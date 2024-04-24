@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #242424;
+    color: #f5f5f5;
+}
+
+.container-form {
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid cyan;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-lbl {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.input-lbl label {
+    margin: 10px;
+}
+
+.input-lbl input {
+    margin: 10px;
+}
+
+.submit-btn {
+    margin: 10px;
+    padding: 5px 20px;
+}
