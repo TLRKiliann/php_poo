@@ -7,27 +7,37 @@
     $form->add_fields("name", "text", "Name");
     $form->add_fields("email", "email", "Email");
     $form->add_fields("password", "password", "Password");
+
+    //head
+    $title = "Main Page";
+    $style = "styles/style.css";
+    $favicon = "images/favicon.png";
+
+    //pages
+    $home = 'index.php';
+	$about = 'Pages/About.php';
+	$contact = 'Pages/Contact.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 
     <head>
-        <meta charset="utf-8">
-        <meta name="keywords" content="HTML, CSS, PHP">
-        <meta name="author" content="Esteban Catanea">
-        <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php require_once 'Html/Head.php'; ?>
     </head>
 
     <body>
         
+        <nav class="navbar">
+            <?php require_once 'Html/Navbar.php'; ?>
+        </nav>
+
         <div class="container-form">
             <?php 
                 echo $form->generator();
             ?>
         </div>
-
+    
     </body>
 
 </html>
