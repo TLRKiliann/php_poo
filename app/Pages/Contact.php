@@ -16,12 +16,16 @@
     </head>
 
     <body>
+
         <header>
-            <h1>Contact</h1>
+            <nav class="navbar">
+                <?php require_once '../Html/Navbar.php'; ?>
+            </nav>   
         </header>
-        <nav class="navbar">
-            <?php require_once '../Html/Navbar.php'; ?>
-        </nav>
+
+        <main>
+            <h1>Contact</h1>
+        </main>
 
     </body>
 
