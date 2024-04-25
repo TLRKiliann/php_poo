@@ -1,4 +1,7 @@
 <?php
+    require_once '../Html/Form.php';
+    $form = new Form();
+
     $title = "About Page";
     $style = "../styles/styles.css";
     $favicon = "../images/favicon.png";
@@ -24,22 +27,26 @@
         </header>
 
         <main>
+            
             <h1>Confirmation</h1>
 
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    //var_dump($_POST);
-                    if (isset($_POST['name'])) {
-                        $name = $_POST['name'];
-                        //echo "Le nom d'utilisateur est : " . $name;
+                    $username = $_POST['name'];
+                    $password = $_POST['password'];
+
+                    if ($form->validate_credentials($username, $password)) {
+                        echo "Bienvenue, " . $username . "! Vous êtes connecté. ";
+                        echo '<a href="Game.php">Go to game !</a>';
                     } else {
-                        echo "Le nom d'utilisateur n'a pas été transmis.";
+                        echo "Nom d'utilisateur ou mot de passe incorrect. ";
+                        echo '<a href="../index.php">Retour à la page d\'accueil</a>';
                     }
-                    echo "Bienvenue, " . $name . "! Vous êtes connecté.";
                 } else {
-                    header("Location: index.php");
+                    header("Location: ../index.php");
                 }
             ?>
+
         </main>
 
     </body>
