@@ -108,6 +108,7 @@ form {
     display: flex;
     justify-content: center;
     font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .sect-player-two {
@@ -121,9 +122,11 @@ form {
 }
 
 .box-result {
+    width: 85%;
     display: flex;
     justify-content: space-between;
     border: 1px solid orangered;
+    margin: auto;
 }
 
 .box-atk {
@@ -149,3 +152,11 @@ form {
     /*margin-right: 20px;*/
     padding: 7px 24px; 
 }
+
+/* .lbl_atk {
+    font-size: 1.4rem;
+}
+
+.lbl_atk_2 {
+    font-size: 1.4rem;
+} */
