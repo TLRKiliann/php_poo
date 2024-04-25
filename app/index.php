@@ -10,7 +10,7 @@
 
     //head
     $title = "Main Page";
-    $style = "styles/style.css";
+    $style = "styles/styles.css";
     $favicon = "images/favicon.png";
 
     //pages
@@ -27,7 +27,11 @@
     </head>
 
     <body>
-        
+
+        <header>
+            <h1>Home</h1>
+        </header>
+
         <nav class="navbar">
             <?php require_once 'Html/Navbar.php'; ?>
         </nav>
