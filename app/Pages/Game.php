@@ -1,6 +1,14 @@
 <?php
     require_once '../class/Game.php';
 
+    /* if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = $_POST['name'];
+        var_dump($_POST);
+        var_dump($username);
+    } else {
+        var_dump($_POST, "Error,");
+    } */
+
     $user = new Game("Yourname", 0, 100);
     $computer = new Game("Computer", 0, 100);
 
@@ -36,11 +44,13 @@
 
                 <section class="sect-player-one">
 
-                    <h2>Gamer 1</h2>
+                    <h2>
+                        <?php echo $user->get_name(); ?>
+                    </h2>
 
                     <div class="div-php">
                         <?php
-                            $user->get_data();
+                            echo "Score: " . $user->get_score();
                             $php_variable = $user->get_atk();
                             //echo $php_variable;
                         ?>
@@ -57,8 +67,8 @@
                         </div>
 
                         <div class="box-dfs">
-                            <button type="button" id="btn_dfs">Dfs</button>
                             <label id="lbl_dfs"></label>
+                            <button type="button" id="btn_dfs">Dfs</button>                        
                         </div>
                     </div>
 
@@ -66,12 +76,13 @@
 
                 <section class="sect-player-two">
 
-                    <h2>Gamer 2</h2>
+                    <h2>
+                        <?php echo $computer->get_name(); ?>
+                    </h2>
 
                     <div class="div-php">
                         <?php
-                            $computer->get_data();
-                            //echo $user->get_score();
+                            echo "Score: " . $computer->get_score();
                             $php_variable_2 = $computer->get_atk();
                             //echo $php_variable_2;
                         ?>
@@ -88,8 +99,8 @@
                         </div>
 
                         <div class="box-dfs">
-                            <button type="button" id="btn_dfs_2">Dfs</button>
                             <label id="lbl_dfs_2"></label>
+                            <button type="button" id="btn_dfs_2">Dfs</button>
                         </div>
                     </div>
 
