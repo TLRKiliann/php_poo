@@ -29,18 +29,23 @@
     <body>
 
         <header>
-            <h1>Home</h1>
+            <nav class="navbar">
+                <?php require_once 'Html/Navbar.php'; ?>
+            </nav>    
         </header>
 
-        <nav class="navbar">
-            <?php require_once 'Html/Navbar.php'; ?>
-        </nav>
+        <main>
+            <h1>Home</h1>
 
-        <div class="container-form">
-            <?php 
-                echo $form->generator();
-            ?>
-        </div>
+            <div class="container-form">
+                <div class="box-form">
+                    <?php 
+                        echo $form->generator();
+                    ?>
+                </div>
+            </div>
+
+        </main>
     
     </body>
 
