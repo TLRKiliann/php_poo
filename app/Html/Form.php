@@ -15,7 +15,7 @@
 
         public function generator(): string {
 
-            $formHtml = '<form method="post">';
+            $formHtml = '<form action="Pages/Confirmation.php" method="post">';
 
             foreach($this->fields as $field) {
                 $formHtml .= '<div class="input-lbl">';
@@ -26,6 +26,21 @@
             $formHtml .= '<input type="submit" value="submit" class="submit-btn">';
             $formHtml .= '</form>';
             return $formHtml;
+        }
+
+        public function validate_credentials($username, $password): bool {
+            // Simulated database
+            $simulated_database = array(
+                array("name" => "esteban", "password" => "123456"),
+                array("name" => "utilisateur2", "password" => "motdepasse2"),
+            );
+    
+            foreach ($simulated_database as $user) {
+                if ($user['name'] === $username && $user['password'] === $password) {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 ?>

@@ -10,7 +10,7 @@
 
     //head
     $title = "Main Page";
-    $style = "styles/style.css";
+    $style = "styles/styles.css";
     $favicon = "images/favicon.png";
 
     //pages
@@ -27,16 +27,25 @@
     </head>
 
     <body>
-        
-        <nav class="navbar">
-            <?php require_once 'Html/Navbar.php'; ?>
-        </nav>
 
-        <div class="container-form">
-            <?php 
-                echo $form->generator();
-            ?>
-        </div>
+        <header>
+            <nav class="navbar">
+                <?php require_once 'Html/Navbar.php'; ?>
+            </nav>    
+        </header>
+
+        <main>
+            <h1>Home</h1>
+
+            <div class="container-form">
+                <div class="box-form">
+                    <?php 
+                        echo $form->generator();
+                    ?>
+                </div>
+            </div>
+
+        </main>
     
     </body>
 
