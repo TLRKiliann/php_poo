@@ -121,12 +121,13 @@ form {
     justify-content: center;
 }
 
-.box-result {
+.box-btnlbl {
     width: 85%;
     display: flex;
     justify-content: space-between;
     border: 1px solid orangered;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .box-atk {
@@ -191,15 +192,17 @@ form {
 }
 
 .message-round {
-    width: 98%;
+    width: 50%;
     display: flex;
     justify-content: center;
-    border: 1px solid yellow;
+    border-radius: 7px;
     margin: auto;
 }
 
 #round-player {
     font-size: 2rem;
+    font-weight: bold;
+    color: #87cefa;
 }
 /* .lbl_atk {
     font-size: 1.4rem;

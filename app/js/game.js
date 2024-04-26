@@ -1,15 +1,19 @@
 //retrieve values from php
 let php_var_player_1 = js_atk;
 let php_var_player_2 = js_atk_2;
+php_var_player_1 = parseInt(php_var_player_1);
+php_var_player_2 = parseInt(php_var_player_2);
 
 let totalLife = life_js;
 let totalLife2 = life_js2;
+totalLife = parseInt(totalLife);
+totalLife2 = parseInt(totalLife2);
 
 //retrieve atk by id
 const btnAtk = document.getElementById("btn_atk");
 const lblAtk = document.getElementById("lbl_atk");
 
-const btnAtk_2 = document.getElementById("btn_atk_2");
+//const btnAtk_2 = document.getElementById("btn_atk_2");
 const lblAtk_2 = document.getElementById("lbl_atk_2");
 
 //retrieve life by id
@@ -22,66 +26,64 @@ const run_player = document.getElementById("round-player");
 //square animation
 const square = document.getElementById("square");
 
-//display player turn
+let currentPlayer = 1;
+//change player
 function changePlayer() {
-    run_player.innerHTML = "It's computer's turn";
+    currentPlayer = currentPlayer === 1 ? 2 : 1;
+    run_player.innerHTML = currentPlayer === 2 
+        ? "It's computer's turn..." 
+        : "It's your turn!";
 }
 
-function changePlayer2() {
-    run_player.innerHTML = "It's your turn";
-}
-
-let count = 0;
+//player atk on computer
 function lifePlayerOne() {
-    let total = totalLife - php_var_player_1;
-    lifephp_1.innerHTML = `Life: ${total}`;
-    count++;
-    if (count === 1) {
+    let total = totalLife2 - php_var_player_1;
+    lifephp_2.innerHTML = `Life: ${total}`;
+    if (total > 0) {
         changePlayer();
-        count = 0;
+    } else {
+        run_player.innerHTML = "Computer is dead - You WIN !"; 
     }
 }
 
-let count2 = 0;
-function lifePlayerTwo() {
-    let total2 = totalLife2 - php_var_player_2;
-    lifephp_2.innerHTML = `Life: ${total2}`;
-    count2++;
-    if (count2 === 1) {
-        changePlayer2();
-        count2 = 0;
+//atk computer
+function lifeComputer() {
+    let total = totalLife - php_var_player_2;
+    lifephp_1.innerHTML = `Life: ${total}`;
+    if (total > 0) {
+        changePlayer();
+    } else {
+        run_player.innerHTML = "You lost - End of game !";
     }
 }
 
 function animationSquare() {
     square.classList.add('caller-js');
-    //square.style.transform = "translateX(800px)";
     setTimeout(() => {
         square.classList.remove('caller-js');
-        //square.style.transform = "translateX(0px)";
     }, 2000);
 }
 
+//atk computer
+function automata_computer() {
+    animationSquare();
+    //php_var_player_2 += 50;
+    php_var_player_2 += Math.floor(Math.random() * 20) + 1;
+    lifeComputer();
+    lblAtk_2.innerHTML = php_var_player_2;
+}
 
 //atk player 1
 btnAtk.addEventListener("click", () => {
     animationSquare();
-    php_var_player_1++;
+    //php_var_player_1 += 50;
+    php_var_player_1 += Math.floor(Math.random() * 20) + 1;
     lifePlayerOne();
     lblAtk.innerHTML = php_var_player_1;
+    let total = totalLife2 - php_var_player_1;
+    if (total > 0) {
+        setTimeout(automata_computer, 3000);
+    } else {
+        console.log("Computer dead");
+    }
 });
-
-//atk computer
-btnAtk_2.addEventListener("click", () => {
-    animationSquare();
-    php_var_player_2++;
-    lifePlayerTwo();
-    lblAtk_2.innerHTML = php_var_player_2;
-});
-
-
-
-
-//transform: translateX(0px);
-
-//transform: translateX(800px);

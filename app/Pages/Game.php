@@ -61,7 +61,7 @@
 
                     </div>
 
-                    <div class="box-result">
+                    <div class="box-btnlbl">
                         <div class="box-atk">
                             <button type="button" id="btn_atk">Atk</button>
                             <label id="lbl_atk"></label>
@@ -99,7 +99,7 @@
 
                     </div>
 
-                    <div class="box-result">
+                    <div class="box-btnlbl">
                         <div class="box-atk">
                             <button type="button" id="btn_atk_2">Atk</button>
                             <label id="lbl_atk_2"></label>
