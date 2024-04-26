@@ -22,7 +22,7 @@
             return $this->atk;
         }
 
-        public function get_score(): int {
+        public function get_life(): int {
             return $this->score;
         }
     }
