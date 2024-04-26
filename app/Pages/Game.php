@@ -48,12 +48,17 @@
                         <?php echo $user->get_name(); ?>
                     </h2>
 
-                    <div class="div-php">
+                    <div id="div-php">
                         <?php
-                            echo "Score: " . $user->get_score();
-                            $php_variable = $user->get_atk();
-                            //echo $php_variable;
+                            $getLife = $user->get_life();
+                            echo "Life: " . $getLife;
+                            $php_atk = $user->get_atk();
                         ?>
+
+                        <script type="text/javascript">
+                            let life_js = '<?php echo $getLife; ?>';
+                        </script>
+
                     </div>
 
                     <div class="box-result">
@@ -62,7 +67,7 @@
                             <label id="lbl_atk"></label>
 
                             <script type="text/javascript">
-                                let js_variable  = '<?php echo $php_variable; ?>';
+                                let js_atk  = '<?php echo $php_atk; ?>';
                             </script>
                         </div>
 
@@ -80,12 +85,18 @@
                         <?php echo $computer->get_name(); ?>
                     </h2>
 
-                    <div class="div-php">
+                    <div id="div-php2">
+                        
                         <?php
-                            echo "Score: " . $computer->get_score();
-                            $php_variable_2 = $computer->get_atk();
-                            //echo $php_variable_2;
+                            $getLife2 = $computer->get_life();
+                            echo "Life: " . $getLife2;
+                            $php_atk_2 = $computer->get_atk();
                         ?>
+
+                        <script type="text/javascript">
+                            let life_js2 = '<?php echo $getLife2; ?>';
+                        </script>
+
                     </div>
 
                     <div class="box-result">
@@ -94,7 +105,7 @@
                             <label id="lbl_atk_2"></label>
                             
                             <script type="text/javascript">
-                                let js_variable_2  = '<?php echo $php_variable_2; ?>';
+                                let js_atk_2  = '<?php echo $php_atk_2; ?>';
                             </script>
                         </div>
 
@@ -107,6 +118,15 @@
                 </section>
 
             </section>
+
+            <div class="square-move">
+                <div id="square">
+                </div>
+            </div>
+
+            <div class="message-round">
+                <p id="round-player"></p>
+            </div>
 
         </main>
 
