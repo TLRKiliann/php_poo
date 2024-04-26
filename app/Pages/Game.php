@@ -1,10 +1,18 @@
 <?php
     require_once '../class/Game.php';
 
-    $user = new Game("GamerName", 100);
-    $computer = new Game("Computer", 100);
+    /* if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = $_POST['name'];
+        var_dump($_POST);
+        var_dump($username);
+    } else {
+        var_dump($_POST, "Error,");
+    } */
 
-    $title = "About Page";
+    $user = new Game("Yourname", 0, 100);
+    $computer = new Game("Computer", 0, 100);
+
+    $title = "Game Page";
     $style = "../styles/styles.css";
     $favicon = "../images/favicon.png";
 
@@ -32,33 +40,69 @@
             
             <h1>Game</h1>
 
-            <section>
+            <section class="container-sect">
 
-                <section>
-                    <h2>You</h2>
+                <section class="sect-player-one">
 
-                    <?php
-                       echo $user->getData();
-                    ?>
-                    <label id="lbl_atk"></label>
-                    <button type="button" id="btn_atk">Atk</button>
+                    <h2>
+                        <?php echo $user->get_name(); ?>
+                    </h2>
 
-                    <label id="lbl_dfs"></label>
-                    <button type="button" id="btn_dfs">Dfs</button>
+                    <div class="div-php">
+                        <?php
+                            echo "Score: " . $user->get_score();
+                            $php_variable = $user->get_atk();
+                            //echo $php_variable;
+                        ?>
+                    </div>
+
+                    <div class="box-result">
+                        <div class="box-atk">
+                            <button type="button" id="btn_atk">Atk</button>
+                            <label id="lbl_atk"></label>
+
+                            <script type="text/javascript">
+                                let js_variable  = '<?php echo $php_variable; ?>';
+                            </script>
+                        </div>
+
+                        <div class="box-dfs">
+                            <label id="lbl_dfs"></label>
+                            <button type="button" id="btn_dfs">Dfs</button>                        
+                        </div>
+                    </div>
 
                 </section>
 
-                <section>
-                    <h2>Gamer 2</h2>
+                <section class="sect-player-two">
 
-                    <?php
-                        echo $computer->getData();
-                    ?>
-                    <label id="lbl_atk_2"></label>
-                    <button type="button" id="btn_atk_2">Atk</button>
+                    <h2>
+                        <?php echo $computer->get_name(); ?>
+                    </h2>
 
-                    <label id="lbl_dfs_2"></label>
-                    <button type="button" id="btn_dfs_2">Dfs</button>
+                    <div class="div-php">
+                        <?php
+                            echo "Score: " . $computer->get_score();
+                            $php_variable_2 = $computer->get_atk();
+                            //echo $php_variable_2;
+                        ?>
+                    </div>
+
+                    <div class="box-result">
+                        <div class="box-atk">
+                            <button type="button" id="btn_atk_2">Atk</button>
+                            <label id="lbl_atk_2"></label>
+                            
+                            <script type="text/javascript">
+                                let js_variable_2  = '<?php echo $php_variable_2; ?>';
+                            </script>
+                        </div>
+
+                        <div class="box-dfs">
+                            <label id="lbl_dfs_2"></label>
+                            <button type="button" id="btn_dfs_2">Dfs</button>
+                        </div>
+                    </div>
 
                 </section>
 
