@@ -45,7 +45,7 @@
 
                     if ($form->validate_credentials($username, $password)) {
                         echo "Bienvenue, " . $username . "! Vous êtes connecté. ";
-                        echo '<a href="Game.php">Go to game !</a>';
+                        echo '<a href="game.php">Go to game !</a>';
                     } else {
                         echo "Nom d'utilisateur ou mot de passe incorrect. ";
                         echo '<a href="../index.php">Retour à la page d\'accueil</a>';
