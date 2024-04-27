@@ -125,7 +125,7 @@ form {
     width: 85%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid orangered;
+    /*border: 1px solid orangered;*/
     margin: auto;
     margin-bottom: 20px;
 }
@@ -134,14 +134,14 @@ form {
     display: flex;
     align-items: center;
     height: 40px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 .box-dfs {
     display: flex;
     align-items: center;
     height: 40px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 #btn_atk, #btn_atk_2 {
@@ -149,8 +149,8 @@ form {
     padding: 7px 24px;
 }
 
-#btn_dfs, #btn_dfs_2 {
-    /*margin-right: 20px;*/
+#btn_dfs_1, #btn_dfs_2 {
+    margin-left: 20px;
     padding: 7px 24px; 
 }
 
@@ -160,16 +160,16 @@ form {
         transform: translateX(0px);
     }
     100% {
-        transform: translateX(800px);
+        transform: translateX(450px);
     }
 }
 
 .square-move {
     display: flex;
     align-items: center;
-    width: 850px;
+    width: 500px;
     height: 10px;
-    background: #444;
+    background: #000;
     border-radius: 10px;
     margin: 40px auto;
 }
@@ -188,7 +188,7 @@ form {
     animation-duration: 1s;
     animation-direction: alternate;
     animation-iteration-count: 2;
-    animation-timing-function: cubic-bezier(0.5, 0.9, 0.5, 0.9);
+    animation-timing-function: cubic-bezier(0.5, 0.9, 0.5, 0.9) ease-out;
 }
 
 .message-round {
@@ -204,10 +204,13 @@ form {
     font-weight: bold;
     color: #87cefa;
 }
-/* .lbl_atk {
-    font-size: 1.4rem;
+
+.refresher-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.lbl_atk_2 {
-    font-size: 1.4rem;
-} */
+.refresher-box button {
+    padding: 7px 24px;
+}

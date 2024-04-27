@@ -1,10 +1,14 @@
 <?php
+    declare(strict_types=1);
+
     session_start();
     require_once('../includes/cookie_helper.php');
-
     require_once '../class/Game.php';
 
-    $user = new Game($_SESSION['username'], 0, 100);
+    $str_session_name = $_SESSION['username'];
+    //print(gettype($str_session_name));
+
+    $user = new Game($str_session_name, 0, 100);
     $computer = new Game("Computer", 0, 100);
 
     $title = "Game Page";
@@ -67,8 +71,8 @@
                         </div>
 
                         <div class="box-dfs">
-                            <label id="lbl_dfs"></label>
-                            <button type="button" id="btn_dfs">Dfs</button>                        
+                            <label id="lbl_dfs_1"></label>
+                            <button type="button" id="btn_dfs_1">Dfs</button>                        
                         </div>
                     </div>
 
@@ -121,6 +125,12 @@
 
             <div class="message-round">
                 <p id="round-player"></p>
+            </div>
+
+            <div class="refresher-box">
+                <button type="button" id="btn-refresh">
+                    Refresh
+                </button>
             </div>
 
         </main>
