@@ -1,15 +1,10 @@
 <?php
+    session_start();
+    require_once('../includes/cookie_helper.php');
+
     require_once '../class/Game.php';
 
-    /* if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST['name'];
-        var_dump($_POST);
-        var_dump($username);
-    } else {
-        var_dump($_POST, "Error,");
-    } */
-
-    $user = new Game("Yourname", 0, 100);
+    $user = new Game($_SESSION['username'], 0, 100);
     $computer = new Game("Computer", 0, 100);
 
     $title = "Game Page";
