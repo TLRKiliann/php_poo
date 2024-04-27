@@ -1,5 +1,6 @@
-APP in PHP OOP
-Purpose of the project (PHP - JS)
+# APP in PHP OOP
+
+## Purpose of the project (PHP - JS)
 
 Simple game with action button to retrieve data from a PHP OOP via JavaScript. This can be found on the pages:
 
@@ -7,14 +8,15 @@ Simple game with action button to retrieve data from a PHP OOP via JavaScript. T
     pages/game.php
     js/game.js
 
-Run application
+## Run application
 
 $ php -S localhost:8000
 
 & in the browser bar:
 
 localhost:8000
-Cookie
+
+## Cookie
 
 includes/cookie_helper.php
 
