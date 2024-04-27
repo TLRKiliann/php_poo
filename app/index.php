@@ -1,6 +1,7 @@
 <?php
+    session_start();
+    
     require_once 'Html/Form.php';
-
     $form = new Form();
 
     //type - name - label

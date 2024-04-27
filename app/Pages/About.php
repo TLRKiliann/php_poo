@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    require_once('../includes/cookie_helper.php');
+
     $title = "About Page";
     $style = "../styles/styles.css";
     $favicon = "../images/favicon.png";
