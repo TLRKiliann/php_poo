@@ -67,8 +67,8 @@
                         </div>
 
                         <div class="box-dfs">
-                            <label id="lbl_dfs"></label>
-                            <button type="button" id="btn_dfs">Dfs</button>                        
+                            <label id="lbl_dfs_1"></label>
+                            <button type="button" id="btn_dfs_1">Dfs</button>                        
                         </div>
                     </div>
 
@@ -121,6 +121,12 @@
 
             <div class="message-round">
                 <p id="round-player"></p>
+            </div>
+
+            <div class="refresher-box">
+                <button type="button" id="btn-refresh">
+                    Refresh
+                </button>
             </div>
 
         </main>
