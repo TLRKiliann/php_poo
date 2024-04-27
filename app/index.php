@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    require_once 'Html/Form.php';
+    require_once 'html/Form.php';
     $form = new Form();
 
     //type - name - label
@@ -16,22 +16,22 @@
 
     //pages
     $home = 'index.php';
-	$about = 'Pages/About.php';
-	$contact = 'Pages/Contact.php';
+	$about = 'pages/about.php';
+	$contact = 'pages/contact.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 
     <head>
-        <?php require_once 'Html/Head.php'; ?>
+        <?php require_once 'html/Head.php'; ?>
     </head>
 
     <body>
 
         <header>
             <nav class="navbar">
-                <?php require_once 'Html/Navbar.php'; ?>
+                <?php require_once 'html/Navbar.php'; ?>
             </nav>    
         </header>
 
