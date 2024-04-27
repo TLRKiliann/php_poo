@@ -1,4 +1,12 @@
 <?php
+    session_start();
+    $username = htmlspecialchars($_POST['name']);
+    $_SESSION['username'] = $username;
+
+    $cookie_name = "username";
+    $cookie_value = $username;
+    setcookie($cookie_name, $username, time() + 365*24*3600, null, null, false, true);
+
     require_once '../Html/Form.php';
     $form = new Form();
 
@@ -32,7 +40,7 @@
 
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $username = $_POST['name'];
+                    $username = htmlspecialchars($_POST['name']);
                     $password = $_POST['password'];
 
                     if ($form->validate_credentials($username, $password)) {
@@ -44,6 +52,7 @@
                     }
                 } else {
                     header("Location: ../index.php");
+                    exit();
                 }
             ?>
 
