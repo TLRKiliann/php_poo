@@ -1,15 +1,10 @@
 <?php
+    session_start();
+    require_once('../includes/cookie_helper.php');
+
     require_once '../class/Game.php';
 
-    /* if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST['name'];
-        var_dump($_POST);
-        var_dump($username);
-    } else {
-        var_dump($_POST, "Error,");
-    } */
-
-    $user = new Game("Yourname", 0, 100);
+    $user = new Game($_SESSION['username'], 0, 100);
     $computer = new Game("Computer", 0, 100);
 
     $title = "Game Page";
@@ -17,22 +12,22 @@
     $favicon = "../images/favicon.png";
 
     $home = '../index.php';
-	$about = 'About.php';
-	$contact = 'Contact.php';
+	$about = 'about.php';
+	$contact = 'contact.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 
     <head>
-        <?php require_once '../Html/Head.php'; ?>
+        <?php require_once '../html/Head.php'; ?>
     </head>
 
     <body>
         
         <header>
             <nav class="navbar">
-                <?php require_once '../Html/Navbar.php'; ?>
+                <?php require_once '../html/Navbar.php'; ?>
             </nav>
         </header>
 
@@ -48,21 +43,26 @@
                         <?php echo $user->get_name(); ?>
                     </h2>
 
-                    <div class="div-php">
+                    <div id="div-php">
                         <?php
-                            echo "Score: " . $user->get_score();
-                            $php_variable = $user->get_atk();
-                            //echo $php_variable;
+                            $getLife = $user->get_life();
+                            echo "Life: " . $getLife;
+                            $php_atk = $user->get_atk();
                         ?>
+
+                        <script type="text/javascript">
+                            let life_js = '<?php echo $getLife; ?>';
+                        </script>
+
                     </div>
 
-                    <div class="box-result">
+                    <div class="box-btnlbl">
                         <div class="box-atk">
                             <button type="button" id="btn_atk">Atk</button>
                             <label id="lbl_atk"></label>
 
                             <script type="text/javascript">
-                                let js_variable  = '<?php echo $php_variable; ?>';
+                                let js_atk  = '<?php echo $php_atk; ?>';
                             </script>
                         </div>
 
@@ -80,21 +80,27 @@
                         <?php echo $computer->get_name(); ?>
                     </h2>
 
-                    <div class="div-php">
+                    <div id="div-php2">
+                        
                         <?php
-                            echo "Score: " . $computer->get_score();
-                            $php_variable_2 = $computer->get_atk();
-                            //echo $php_variable_2;
+                            $getLife2 = $computer->get_life();
+                            echo "Life: " . $getLife2;
+                            $php_atk_2 = $computer->get_atk();
                         ?>
+
+                        <script type="text/javascript">
+                            let life_js2 = '<?php echo $getLife2; ?>';
+                        </script>
+
                     </div>
 
-                    <div class="box-result">
+                    <div class="box-btnlbl">
                         <div class="box-atk">
                             <button type="button" id="btn_atk_2">Atk</button>
                             <label id="lbl_atk_2"></label>
                             
                             <script type="text/javascript">
-                                let js_variable_2  = '<?php echo $php_variable_2; ?>';
+                                let js_atk_2  = '<?php echo $php_atk_2; ?>';
                             </script>
                         </div>
 
@@ -107,6 +113,15 @@
                 </section>
 
             </section>
+
+            <div class="square-move">
+                <div id="square">
+                </div>
+            </div>
+
+            <div class="message-round">
+                <p id="round-player"></p>
+            </div>
 
         </main>
 
