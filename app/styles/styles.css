@@ -160,16 +160,16 @@ form {
         transform: translateX(0px);
     }
     100% {
-        transform: translateX(800px);
+        transform: translateX(450px);
     }
 }
 
 .square-move {
     display: flex;
     align-items: center;
-    width: 850px;
+    width: 500px;
     height: 10px;
-    background: #444;
+    background: #000;
     border-radius: 10px;
     margin: 40px auto;
 }
@@ -188,7 +188,7 @@ form {
     animation-duration: 1s;
     animation-direction: alternate;
     animation-iteration-count: 2;
-    animation-timing-function: cubic-bezier(0.5, 0.9, 0.5, 0.9);
+    animation-timing-function: cubic-bezier(0.5, 0.9, 0.5, 0.9) ease-out;
 }
 
 .message-round {
@@ -204,13 +204,6 @@ form {
     font-weight: bold;
     color: #87cefa;
 }
-/* .lbl_atk {
-    font-size: 1.4rem;
-}
-
-.lbl_atk_2 {
-    font-size: 1.4rem;
-} */
 
 .refresher-box {
     width: 100%;
