@@ -4,22 +4,23 @@
 
 Simple game with action button to retrieve data from a PHP OOP via JavaScript. This can be found on the pages:
 
-    class/Game.php
-    pages/game.php
-    js/game.js
+- class/Game.php
+- pages/game.php
+- js/game.js
 
 ## Run application
 
-$ php -S localhost:8000
+`$ php -S localhost:8000`
 
 & in the browser bar:
 
-localhost:8000
+`localhost:8000`
 
 ## Cookie
 
-includes/cookie_helper.php
+`includes/cookie_helper.php`
 
+```
 <?php
     function get_username_from_cookie() {
         if(isset($_COOKIE['username'])) {
@@ -29,9 +30,11 @@ includes/cookie_helper.php
         }
     }
 ?>
+```
 
-retrieve username from cookie
+- retrieve username from cookie
 
+```
 require_once('cookie_helper.php');
 
 $username = get_username_from_cookie();
@@ -45,3 +48,5 @@ if($username) {
 retrieve cookie from others files
 
 require_once('includes/cookie_helper.php');
+```
+
