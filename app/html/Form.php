@@ -1,5 +1,5 @@
 <?php
-    declare(strict_type=1);
+    declare(strict_types=1);
 
     class Form
     {
@@ -31,7 +31,7 @@
         public function validate_credentials($username, $password): bool {
             // Simulated database
             $simulated_database = array(
-                array("name" => "esteban", "password" => "123456"),
+                array("name" => "Esteban", "password" => "123456"),
                 array("name" => "utilisateur2", "password" => "motdepasse2"),
             );
     
