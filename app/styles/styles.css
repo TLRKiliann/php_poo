@@ -84,6 +84,16 @@ form {
     padding: 5px 20px;
 }
 
+/*confirmation*/
+
+.linktogame {
+    color: #00ffff;
+}
+
+.goback {
+    color: #ffa500;
+}
+
 /*Game*/
 .container-sect {
     display: flex;

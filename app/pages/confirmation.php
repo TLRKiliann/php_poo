@@ -45,10 +45,10 @@
 
                     if ($form->validate_credentials($username, $password)) {
                         echo "Bienvenue, " . $username . "! Vous êtes connecté. ";
-                        echo '<a href="game.php">Go to game !</a>';
+                        echo '<a class="linktogame" href="game.php">Go to game !</a>';
                     } else {
                         echo "Nom d'utilisateur ou mot de passe incorrect. ";
-                        echo '<a href="../index.php">Retour à la page d\'accueil</a>';
+                        echo '<a class="goback" href="../index.php">Retour à la page d\'accueil</a>';
                     }
                 } else {
                     header("Location: ../index.php");
