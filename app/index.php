@@ -2,6 +2,9 @@
     session_start();
     require_once('includes/cookie_helper.php');
     require_once 'html/Form.php';
+    
+    use App\html\Form;
+
     $form = new Form();
 
     //type - name - label

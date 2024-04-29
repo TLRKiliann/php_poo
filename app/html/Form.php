@@ -1,6 +1,8 @@
 <?php
     declare(strict_types=1);
 
+    namespace App\html;
+
     class Form
     {
         private $fields = array();

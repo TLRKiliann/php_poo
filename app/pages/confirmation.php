@@ -10,6 +10,9 @@
     setcookie($cookie_name, $username, time() + 365*24*3600, null, null, false, true);
 
     require_once '../html/Form.php';
+
+    use App\html\Form;
+
     $form = new Form();
 
     //head
