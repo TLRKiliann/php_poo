@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require_once('../includes/cookie_helper.php');
+    
     $username = htmlspecialchars($_POST['name']);
     $_SESSION['username'] = $username;
 
@@ -10,13 +12,14 @@
     require_once '../html/Form.php';
     $form = new Form();
 
-    $title = "About Page";
+    $title = "Confirmation Page";
     $style = "../styles/styles.css";
     $favicon = "../images/favicon.png";
 
     $home = '../index.php';
 	$about = 'about.php';
 	$contact = 'contact.php';
+	$str_session_name = get_username_from_cookie();
 ?>
 
 <!DOCTYPE html>

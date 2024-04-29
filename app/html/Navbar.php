@@ -2,6 +2,7 @@
     $home;
 	$about;
 	$contact;
+	$str_session_name;
 ?>
 
 <ul>
@@ -20,4 +21,11 @@
 			Contact
 		</a>
 	</li>
+	<?php
+		if (isset($str_session_name)) {
+			echo '<li><a>' . $str_session_name . '</a></li>';
+		} else {
+			echo '<li><a>login</a></li>';
+		}
+	?>
 </ul>

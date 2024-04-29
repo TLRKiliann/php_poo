@@ -18,6 +18,7 @@
     $home = '../index.php';
 	$about = 'about.php';
 	$contact = 'contact.php';
+    $str_session_name;
 ?>
 
 <!DOCTYPE html>

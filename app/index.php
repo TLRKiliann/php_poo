@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+    require_once('includes/cookie_helper.php');
     require_once 'html/Form.php';
     $form = new Form();
 
@@ -14,10 +14,10 @@
     $style = "styles/styles.css";
     $favicon = "images/favicon.png";
 
-    //pages
     $home = 'index.php';
 	$about = 'pages/about.php';
 	$contact = 'pages/contact.php';
+	$str_session_name = get_username_from_cookie();
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +36,7 @@
         </header>
 
         <main>
+
             <h1>Home</h1>
 
             <div class="container-form">
