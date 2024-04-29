@@ -17,6 +17,7 @@
     //routes
     $home = 'index.php';
 	$about = 'pages/about.php';
+    $products = 'pages/products.php';
 	$contact = 'pages/contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>

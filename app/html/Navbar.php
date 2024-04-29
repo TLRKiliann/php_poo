@@ -1,6 +1,7 @@
 <?php
     $home;
 	$about;
+    $products;
 	$contact;
 	$str_session_name;
 ?>
@@ -14,6 +15,11 @@
 	<li>
 		<a href="<?php echo $about; ?>">
 			About
+		</a>
+	</li>
+	<li>
+		<a href="<?php echo $products; ?>">
+			Products
 		</a>
 	</li>
 	<li>

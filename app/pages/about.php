@@ -9,6 +9,7 @@
 
     //routes
     $home = '../index.php';
+    $products = 'products.php';
 	$about = 'about.php';
 	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();

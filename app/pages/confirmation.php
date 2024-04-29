@@ -20,6 +20,7 @@
     //routes
     $home = '../index.php';
 	$about = 'about.php';
+    $products = 'products.php';
 	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>
