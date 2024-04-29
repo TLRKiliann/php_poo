@@ -8,7 +8,7 @@
     $form = new Form();
 
     //type - name - label
-    $form->add_fields("name", "text", "Name");
+    $form->add_fields("username", "text", "Name");
     $form->add_fields("email", "email", "Email");
     $form->add_fields("password", "password", "Password");
 

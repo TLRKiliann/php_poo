@@ -2,12 +2,8 @@
     session_start();
     require_once('../includes/cookie_helper.php');
     
-    $username = htmlspecialchars($_POST['name']);
+    $username = $_POST['username'];
     $_SESSION['username'] = $username;
-
-    $cookie_name = "username";
-    $cookie_value = $username;
-    setcookie($cookie_name, $username, time() + 365*24*3600, null, null, false, true);
 
     require_once '../html/Form.php';
 
@@ -49,9 +45,11 @@
 
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $username = htmlspecialchars($_POST['name']);
+                    $username = htmlspecialchars($_POST['username']);
                     $password = $_POST['password'];
-
+                    $cookie_name = "username";
+                    setcookie($cookie_name, $username, time() + 365*24*3600, null, null, false, true);
+                
                     if ($form->validate_credentials($username, $password)) {
                         echo "Bienvenue, " . $username . "! Vous êtes connecté. ";
                         echo '<a class="linktogame" href="game.php">Go to game !</a>';
