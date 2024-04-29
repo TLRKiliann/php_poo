@@ -5,8 +5,8 @@
     require_once('../includes/cookie_helper.php');
     require_once '../class/Game.php';
 
-    $str_session_name = $_SESSION['username'];
-    //print(gettype($str_session_name));
+    //$str_session_name = $_SESSION['username'];
+    $str_session_name = get_username_from_cookie();
 
     $user = new Game($str_session_name, 0, 100);
     $computer = new Game("Computer", 0, 100);
