@@ -11,10 +11,12 @@
     $user = new Game($str_session_name, 0, 100);
     $computer = new Game("Computer", 0, 100);
 
+    //head
     $title = "Game Page";
     $style = "../styles/styles.css";
     $favicon = "../images/favicon.png";
 
+    //routes
     $home = '../index.php';
 	$about = 'about.php';
 	$contact = 'contact.php';

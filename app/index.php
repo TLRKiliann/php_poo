@@ -14,6 +14,7 @@
     $style = "styles/styles.css";
     $favicon = "images/favicon.png";
 
+    //routes
     $home = 'index.php';
 	$about = 'pages/about.php';
 	$contact = 'pages/contact.php';
