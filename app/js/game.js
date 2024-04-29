@@ -57,8 +57,10 @@ function attackFunc() {
 function computerUserStatus() {
     if (life_computer <= 0) {
         run_player.innerHTML = "You Win !";
+        return;
     } else if (life_user <= 0) {
         run_player.innerHTML = "Game Over";
+        return;
     } else {
         console.log("game continue");
     }

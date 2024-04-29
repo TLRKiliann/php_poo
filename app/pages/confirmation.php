@@ -1,22 +1,29 @@
 <?php
     session_start();
-    $username = htmlspecialchars($_POST['name']);
-    $_SESSION['username'] = $username;
+    require_once('../includes/cookie_helper.php');
+    
+    $username = htmlspecialchars($_POST['username']);
+    if (isset($_SESSION['username'])) {
+        $_SESSION['username'] = $username;
+    };
 
-    $cookie_name = "username";
-    $cookie_value = $username;
-    setcookie($cookie_name, $username, time() + 365*24*3600, null, null, false, true);
+    require_once('../html/Form.php');
 
-    require_once '../html/Form.php';
+    use App\html\Form;
+
     $form = new Form();
 
-    $title = "About Page";
+    //head
+    $title = "Confirmation Page";
     $style = "../styles/styles.css";
     $favicon = "../images/favicon.png";
 
+    //routes
     $home = '../index.php';
 	$about = 'about.php';
+    $products = 'products.php';
 	$contact = 'contact.php';
+	$str_session_name = get_username_from_cookie();
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +47,11 @@
 
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $username = htmlspecialchars($_POST['name']);
+                    $username = htmlspecialchars($_POST['username']);
                     $password = $_POST['password'];
-
+                    $cookie_name = "username";
+                    setcookie($cookie_name, $username, time() + 365*24*3600, null, null, false, true);
+                
                     if ($form->validate_credentials($username, $password)) {
                         echo "Bienvenue, " . $username . "! Vous êtes connecté. ";
                         echo '<a class="linktogame" href="game.php">Go to game !</a>';

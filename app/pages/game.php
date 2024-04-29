@@ -3,21 +3,27 @@
 
     session_start();
     require_once('../includes/cookie_helper.php');
-    require_once '../class/Game.php';
+    require_once('../class/Game.php');
 
-    $str_session_name = $_SESSION['username'];
-    //print(gettype($str_session_name));
+    //$str_session_name = $_SESSION['username'];
+    $str_session_name = get_username_from_cookie();
+
+    use App\class\Game;
 
     $user = new Game($str_session_name, 0, 100);
     $computer = new Game("Computer", 0, 100);
 
+    //head
     $title = "Game Page";
     $style = "../styles/styles.css";
     $favicon = "../images/favicon.png";
 
+    //routes
     $home = '../index.php';
 	$about = 'about.php';
+    $products = 'products.php';
 	$contact = 'contact.php';
+    $str_session_name;
 ?>
 
 <!DOCTYPE html>

@@ -43,7 +43,7 @@ main {
 /*Form*/
 .container-form {
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 200px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,8 +52,9 @@ main {
 .box-form {
     width: 400px;
     margin: auto;
-    background: #444;
+    background: #333;
     border-radius: 7px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     padding: 14px;
 }
 
