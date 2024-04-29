@@ -2,10 +2,12 @@
     session_start();
     require_once('../includes/cookie_helper.php');
     
-    $username = $_POST['username'];
-    $_SESSION['username'] = $username;
+    $username = htmlspecialchars($_POST['username']);
+    if (isset($_SESSION['username'])) {
+        $_SESSION['username'] = $username;
+    };
 
-    require_once '../html/Form.php';
+    require_once('../html/Form.php');
 
     use App\html\Form;
 

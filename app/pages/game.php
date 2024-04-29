@@ -3,7 +3,7 @@
 
     session_start();
     require_once('../includes/cookie_helper.php');
-    require_once '../class/Game.php';
+    require_once('../class/Game.php');
 
     //$str_session_name = $_SESSION['username'];
     $str_session_name = get_username_from_cookie();

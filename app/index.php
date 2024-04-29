@@ -1,9 +1,12 @@
 <?php
     session_start();
     require_once('includes/cookie_helper.php');
-    require_once 'html/Form.php';
-    
+    require_once('html/Form.php');
+    //require('class\autoloader.php');
+
     use App\html\Form;
+
+
 
     $form = new Form();
 
