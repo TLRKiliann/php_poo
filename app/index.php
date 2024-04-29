@@ -1,14 +1,12 @@
 <?php
     session_start();
     require_once('includes/cookie_helper.php');
-    require_once('html/Form.php');
-    //require('class\autoloader.php');
+    //require_once('class/Form.php');
+    require('class/Autoloader.php');
 
-    use App\html\Form;
-
-
-
-    $form = new Form();
+    Autoloader::register();
+    //use App\Form;
+    $form = new App\Form();
 
     //type - name - label
     $form->add_fields("username", "text", "Name");
