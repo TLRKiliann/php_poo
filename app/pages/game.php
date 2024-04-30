@@ -45,6 +45,9 @@
             
             <h1>Game</h1>
 
+            <p class="paragraph">atk = attack (random 1 - 40)</p>
+            <p class="paragraph">dfs = defense (atk/4)</p>
+
             <section class="container-sect">
 
                 <section class="sect-player-one">
@@ -123,6 +126,8 @@
                 </section>
 
             </section>
+
+            <p class="paragraph">(You only have 3 defenses per round)</p>
 
             <div class="square-move">
                 <div id="square">
