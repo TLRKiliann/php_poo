@@ -1,4 +1,4 @@
-# APP in PHP OOP
+# APP in PHP OOP (PHP - MySQL - JS - HTML - CSS)
 
 (under development)
 
