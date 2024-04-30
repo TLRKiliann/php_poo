@@ -7,19 +7,18 @@
         $_SESSION['username'] = $username;
     };
 
-    require_once('../html/Form.php');
-
-    use App\html\Form;
+    require_once('../class/Form.php');
+    use App\Form;
 
     $form = new Form();
 
     //head
     $title = "Confirmation Page";
-    $style = "../styles/styles.css";
+    $style = "../public/css/styles.css";
     $favicon = "../images/favicon.png";
 
     //routes
-    $home = '../index.php';
+    $home = '../public/index.php';
 	$about = 'about.php';
     $products = 'products.php';
 	$contact = 'contact.php';

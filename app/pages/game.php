@@ -15,11 +15,11 @@
 
     //head
     $title = "Game Page";
-    $style = "../styles/styles.css";
+    $style = "../public/css/styles.css";
     $favicon = "../images/favicon.png";
 
     //routes
-    $home = '../index.php';
+    $home = '../public/index.php';
 	$about = 'about.php';
     $products = 'products.php';
 	$contact = 'contact.php';
@@ -141,7 +141,7 @@
 
         </main>
 
-        <script src="../js/game.js"></script>
+        <script src="../public/js/game.js"></script>
         
     </body>
 

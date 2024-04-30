@@ -4,11 +4,11 @@
 
     //head
     $title = "About Page";
-    $style = "../styles/styles.css";
+    $style = "../public/css/styles.css";
     $favicon = "../images/favicon.png";
 
     //routes
-    $home = '../index.php';
+    $home = '../public/index.php';
     $products = 'products.php';
 	$about = 'about.php';
 	$contact = 'contact.php';

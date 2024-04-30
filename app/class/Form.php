@@ -17,7 +17,7 @@
 
         public function generator(): string {
 
-            $formHtml = '<form action="pages/confirmation.php" method="post">';
+            $formHtml = '<form action="../pages/confirmation.php" method="post">';
 
             foreach($this->fields as $field) {
                 $formHtml .= '<div class="input-lbl">';
