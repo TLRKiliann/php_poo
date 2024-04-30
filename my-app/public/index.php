@@ -4,14 +4,20 @@
     
     /*
     //With namspace App
-    require_once('class/Form.php');
+    require_once('app/Form.php');
     use App\Form; 
     */
     
-    require('../class/Autoloader.php');
+    require('../app/Autoloader.php');
 
-    Autoloader::register();
+    use App\Autoloader;
+
+    App\Autoloader::register();
     $form = new App\Form();
+
+
+
+
 
     //type - name - label
     $form->add_fields("username", "text", "Name");
@@ -26,7 +32,7 @@
     //routes
     $login = 'index.php';
 	$about = '../pages/about.php';
-    $products = '../pages/products.php';
+    $home = '../pages/home.php';
 	$contact = '../pages/contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>

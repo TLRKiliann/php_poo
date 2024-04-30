@@ -1,4 +1,6 @@
 <?php
+    namespace App;
+
     class Autoloader
     {
         static function register() {
@@ -13,10 +15,13 @@
             }
         } */
 
+        /**
+         * @param $class string
+        */
         static function autoload($class) {
             $class = str_replace('App\\', '', $class);
             $class = str_replace('\\', '/', $class);
-            require '../class/' . $class . '.php';
+            require '../app/' . $class . '.php';
         }
     }
 ?>
