@@ -15,7 +15,7 @@ This can be found on the pages:
 
 & in the browser bar:
 
-`localhost:8000`
+`localhost:8000/public/index.php`
 
 ## Cookie
 

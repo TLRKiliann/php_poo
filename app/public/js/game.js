@@ -4,6 +4,7 @@ let php_atk_player_2 = js_atk_2;
 php_atk_player_1 = parseInt(php_atk_player_1);
 php_atk_player_2 = parseInt(php_atk_player_2);
 
+//life of players
 let life_user = life_js;
 let life_computer = life_js2;
 life_user = parseInt(life_user); 
@@ -19,7 +20,7 @@ const btnAtk = document.getElementById("btn_atk");
 const lblAtk = document.getElementById("lbl_atk");
 const lblAtk_2 = document.getElementById("lbl_atk_2");
 
-//retrieve life by id
+//display life in lbl
 const displayer_life_1 = document.getElementById('div-php');
 const displayer_life_2 = document.getElementById('div-php2');
 
@@ -91,8 +92,8 @@ function randomComputerChoice() {
 let defense_computer_counter = 0;
 
 function automata_compute() {
-    animationSquare();
     changePlayer();
+    animationSquare();
     let random = randomComputerChoice();
     if (random === 1) {
         if (active_dfs_user === 1) {

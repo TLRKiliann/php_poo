@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
     require_once('../includes/cookie_helper.php');
     
     /*
@@ -19,12 +19,12 @@
     $form->add_fields("password", "password", "Password");
 
     //head
-    $title = "Home Page";
+    $title = "Login Page";
     $style = "css/styles.css";
     $favicon = "../images/favicon.png";
 
     //routes
-    $home = 'index.php';
+    $login = 'index.php';
 	$about = '../pages/about.php';
     $products = '../pages/products.php';
 	$contact = '../pages/contact.php';
@@ -48,7 +48,7 @@
 
         <main>
 
-            <h1>Home</h1>
+            <h1>Login</h1>
 
             <div class="container-form">
                 <div class="box-form">

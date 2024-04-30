@@ -1,15 +1,15 @@
 <?php
-    $home;
+    $login;
 	$about;
-    $products;
+    $home;
 	$contact;
 	$str_session_name;
 ?>
 
 <ul>
 	<li>
-		<a href="<?php echo $home; ?>">
-			Home
+		<a href="<?php echo $login; ?>">
+			Login
 		</a>
 	</li>
 	<li>
@@ -18,8 +18,8 @@
 		</a>
 	</li>
 	<li>
-		<a href="<?php echo $products; ?>">
-			Products
+		<a href="<?php echo $home; ?>">
+			Home
 		</a>
 	</li>
 	<li>

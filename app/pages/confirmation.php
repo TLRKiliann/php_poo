@@ -20,9 +20,9 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $home = '../public/index.php';
+    $login = '../public/index.php';
 	$about = 'about.php';
-    $products = 'products.php';
+    $home = 'home.php';
 	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>
