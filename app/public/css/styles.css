@@ -96,6 +96,11 @@ form {
 }
 
 /*Game*/
+.paragraph {
+    margin-left: 20px;
+    color: #00ffff;
+}
+
 .container-sect {
     display: flex;
     flex-direction: row;
@@ -182,7 +187,7 @@ form {
     height: 10px;
     background: #000;
     border-radius: 10px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 #square {
@@ -208,12 +213,14 @@ form {
     justify-content: center;
     border-radius: 7px;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 #round-player {
     font-size: 2rem;
     font-weight: bold;
-    color: #87cefa;
+    color: #00ffff;
+    margin: auto;
 }
 
 .refresher-box {

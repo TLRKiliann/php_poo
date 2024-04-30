@@ -3,25 +3,26 @@
     require_once('../includes/cookie_helper.php');
     
     $username = htmlspecialchars($_POST['username']);
-    if (isset($_SESSION['username'])) {
-        $_SESSION['username'] = $username;
-    };
 
-    require_once('../html/Form.php');
+    $cookie_name = "username";
+    setcookie($cookie_name, $username, time() + 365 * 24 * 3600, null, null, false, false);
+    
+    $_SESSION['username'] = $username;
 
-    use App\html\Form;
+    require_once('../class/Form.php');
+    use App\Form;
 
     $form = new Form();
 
     //head
     $title = "Confirmation Page";
-    $style = "../styles/styles.css";
+    $style = "../public/css/styles.css";
     $favicon = "../images/favicon.png";
 
     //routes
-    $home = '../index.php';
+    $login = '../public/index.php';
 	$about = 'about.php';
-    $products = 'products.php';
+    $home = 'home.php';
 	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>
@@ -47,17 +48,13 @@
 
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $username = htmlspecialchars($_POST['username']);
                     $password = $_POST['password'];
-                    $cookie_name = "username";
-                    setcookie($cookie_name, $username, time() + 365*24*3600, null, null, false, true);
-                
                     if ($form->validate_credentials($username, $password)) {
                         echo "Bienvenue, " . $username . "! Vous êtes connecté. ";
                         echo '<a class="linktogame" href="game.php">Go to game !</a>';
                     } else {
                         echo "Nom d'utilisateur ou mot de passe incorrect. ";
-                        echo '<a class="goback" href="../index.php">Retour à la page d\'accueil</a>';
+                        echo '<a class="goback" href="../public/index.php">Retour à la page d\'accueil</a>';
                     }
                 } else {
                     header("Location: ../index.php");

@@ -15,13 +15,13 @@
 
     //head
     $title = "Game Page";
-    $style = "../styles/styles.css";
+    $style = "../public/css/styles.css";
     $favicon = "../images/favicon.png";
 
     //routes
-    $home = '../index.php';
+    $login = '../public/index.php';
 	$about = 'about.php';
-    $products = 'products.php';
+    $home = 'home.php';
 	$contact = 'contact.php';
     $str_session_name;
 ?>
@@ -44,6 +44,9 @@
         <main>
             
             <h1>Game</h1>
+
+            <p class="paragraph">atk = attack (random 1 - 40)</p>
+            <p class="paragraph">dfs = defense (atk/4)</p>
 
             <section class="container-sect">
 
@@ -124,6 +127,8 @@
 
             </section>
 
+            <p class="paragraph">(You only have 3 defenses per round)</p>
+
             <div class="square-move">
                 <div id="square">
                 </div>
@@ -141,7 +146,7 @@
 
         </main>
 
-        <script src="../js/game.js"></script>
+        <script src="../public/js/game.js"></script>
         
     </body>
 
