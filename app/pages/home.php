@@ -13,7 +13,7 @@
     $contact = 'contact.php';
     $str_session_name = get_username_from_cookie();
 
-    $pdo = new PDO('mysql:host=192.168.18.9;port:3306;dbname=mytable', 'root', 'root');
+    $pdo = new PDO('mysql:host=XXXX.XXXX.XXXX.XXXX;port:XXXX;dbname=mytable', 'root', 'root');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $res = $pdo->query('SELECT * FROM articles');
