@@ -13,15 +13,15 @@
     $contact = 'contact.php';
     $str_session_name = get_username_from_cookie();
 
-    //--- PDO
+    //---PDO
 
-    $pdo = new PDO();
+/*     $pdo = new PDO('');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $res = $pdo->query('SELECT * FROM articles');
     //var_dump($res->fetchAll(PDO::FETCH_OBJ));
     $data = $res->fetchAll(PDO::FETCH_OBJ);
-    var_dump($data[0]->title);
+    var_dump($data[0]->title); */
 ?>
 
 <!DOCTYPE html>

@@ -3,12 +3,12 @@
 
     session_start();
     require_once('../includes/cookie_helper.php');
-    require_once('../class/Game.php');
+    require_once('../app/Game.php');
 
     //$str_session_name = $_SESSION['username'];
     $str_session_name = get_username_from_cookie();
 
-    use App\class\Game;
+    use App\Game;
 
     $user = new Game($str_session_name, 0, 100);
     $computer = new Game("Computer", 0, 100);
