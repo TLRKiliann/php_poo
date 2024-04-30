@@ -10,7 +10,9 @@
     
     require('../app/Autoloader.php');
 
-    Autoloader::register();
+    use App\Autoloader;
+
+    App\Autoloader::register();
     $form = new App\Form();
 
 

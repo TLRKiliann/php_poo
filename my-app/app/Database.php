@@ -11,6 +11,7 @@
 
         /**
          * @param $db_name string $db_host string $db_port int $db_user string $db_passwd string
+         * @var $db_name = "mytable"
          */
         public function __construct($db_name, $db_host = '192.168.18.9',
             $db_port = 3306, $db_user = 'koala33', $db_passwd = 'Ko@l@tr3379') {
@@ -28,8 +29,7 @@
             $pdo = new PDO('mysql:dbname=mytable;host=192.168.18.9;port:3306', 'koala33', 'Ko@l@tr3379');
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo;
-            return $this->pdo;
-            
+            return $this->pdo;   
         }
 
         /**
