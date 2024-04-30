@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #222;
+    color: #f5f5f5;
+}
+
+header {
+    width: 100vw;
+    margin: auto;
+    background: linear-gradient(30deg, rgba(65, 105, 225, 0.8), rgba(34, 34, 34, 0.8));
+    overflow: hidden;
+}
+
+.navbar {
+    width: 100%;
+    height: 40px;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.navbar li {
+    list-style: none;
+    margin-right: 50px;
+}
+
+.navbar a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+main {
+    padding: 5px 10px;
+}
+
+/*Form*/
+.container-form {
+    width: 100%;
+    height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-form {
+    width: 400px;
+    margin: auto;
+    background: #333;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    padding: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #242424;
+    border-radius: 7px;
+}
+
+.input-lbl {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.input-lbl label {
+    margin: 10px;
+}
+
+.input-lbl input {
+    margin: 10px;
+}
+
+.submit-btn {
+    margin: 10px;
+    padding: 5px 20px;
+}
+
+/*confirmation*/
+
+.linktogame {
+    color: #00ffff;
+}
+
+.goback {
+    color: #ffa500;
+}
+
+/*Game*/
+.paragraph {
+    margin-left: 20px;
+    color: #00ffff;
+}
+
+.container-sect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sect-player-one {
+    width: 48%;
+    background: linear-gradient(30deg, rgba(65, 105, 225, 0.8), rgba(34, 34, 34, 0.8));
+    border-radius: 7px;
+}
+
+.sect-player-one h2 {
+    display: flex;
+    justify-content: center;
+}
+
+#div-php, #div-php2 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.sect-player-two {
+    width: 48%;
+    background: linear-gradient(30deg, rgba(128, 0, 128, 1), rgba(34, 34, 34, 0.8));
+    border-radius: 7px;
+}
+
+.sect-player-two h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.box-btnlbl {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    /*border: 1px solid orangered;*/
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.box-atk {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    /*border: 1px solid red;*/
+}
+
+.box-dfs {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    /*border: 1px solid red;*/
+}
+
+#btn_atk, #btn_atk_2 {
+    margin-right: 20px;
+    padding: 7px 24px;
+}
+
+#btn_dfs_1, #btn_dfs_2 {
+    margin-left: 20px;
+    padding: 7px 24px; 
+}
+
+/*square animation*/
+@keyframes square-animation {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(450px);
+    }
+}
+
+.square-move {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 10px;
+    background: #000;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+#square {
+    width: 50px;
+    height: 10px;
+    background: linear-gradient(30deg, 
+        rgba(65, 105, 225, 1), rgba(0, 191, 250, 1));
+    border-radius: 10px;
+}
+
+.caller-js {
+    animation-name: square-animation;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-timing-function: cubic-bezier(0.5, 0.9, 0.5, 0.9) ease-out;
+}
+
+.message-round {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border-radius: 7px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#round-player {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00ffff;
+    margin: auto;
+}
+
+.refresher-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.refresher-box button {
+    padding: 7px 24px;
+}
