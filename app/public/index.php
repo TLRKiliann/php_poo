@@ -1,8 +1,13 @@
 <?php
-    session_start();
+    //session_start();
     require_once('../includes/cookie_helper.php');
-    //require_once('class/Form.php');
-    //use App\Form;
+    
+    /*
+    //With namspace App
+    require_once('class/Form.php');
+    use App\Form; 
+    */
+    
     require('../class/Autoloader.php');
 
     Autoloader::register();
