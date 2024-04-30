@@ -1,5 +1,7 @@
 # APP in PHP OOP
 
+(under development)
+
 ## Purpose of the project (PHP - JS)
 
 I wanted to build a PHP application to improve my skills in PHP OOP architecture with a homemade framework.
@@ -105,4 +107,11 @@ Otherwise, if expiration data has been defined, we need to store the time before
 as shown in the example below:
 
 `setcookie("username", "", time() - 1)`;
+
+# OOP
+
+- class/Autoloader.php
+- class/Form.php
+- class/Game.php
+- pages/home.php
 
