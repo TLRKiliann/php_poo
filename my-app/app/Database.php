@@ -38,13 +38,26 @@
         }
 
         /**
+         * @param $statement string
+         * @param $class_name string
          * @return $data object
          */
         public function query($statement, $class_name) {
-            var_dump($statement);
-            var_dump($class_name);
             $req = $this->getPdo()->query($statement);
             $data = $req->fetchAll(PDO::FETCH_CLASS, $class_name);
+            return $data;
+        }
+        
+        public function prepare($statement, $arg, $class_name, $one = false) {
+            $req = $this-> getPdo()->prepare($statement);
+            $req->execute($arg);
+            $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+            if ($one) {
+                $data = $req->fetch();
+            } else {
+                $data = $req->fetchAll();
+            }
+            //$data = $req->fetchAll(PDO::FETCH_CLASS, $class_name);
             return $data;
         }
     }

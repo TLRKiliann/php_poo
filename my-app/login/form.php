@@ -19,7 +19,7 @@
     $login = 'form.php';
 	$about = '../pages/about.php';
     $home = '../pages/home.php';
-    $single = '../pages/single.php';
+    $article = '../pages/article.php';
 	$contact = '../pages/contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>

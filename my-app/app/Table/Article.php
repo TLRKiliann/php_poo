@@ -8,7 +8,9 @@
         }
     
         public function getExtrait() {
-            return $this->content;
+            $html = '<p>' . $this->content . '</p>';
+            $html .= '<p><a href="' . $this->getUrl() . '">Voir la suite</a></p>';
+            return $html;
         }
     }
 ?>

@@ -10,16 +10,15 @@
     $login = '../login/form.php';
     $about = 'about.php';
     $home = 'home.php';
-    $single = 'single.php';
+    $article = 'article.php';
     $contact = 'contact.php';
     $str_session_name = get_username_from_cookie();
 
     //---PDO make test with db here (README.md)
-
     require_once('../app/Autoloader.php');
     App\Autoloader::register();
-
     $db = new App\Database('mytable');
+
     /*
     $pdo = new PDO('mysql:dbname=mytable;host=192.168.18.9;port=3306', 'koala33', 'Ko@l@tr3379');
     $req = $pdo->query('SELECT * FROM articles');
@@ -49,18 +48,18 @@
 
         <ul>
             
-            <?php foreach($db->query('SELECT * FROM articles', 'App\Table\Article') as $post): ?>
-                
-                <?php var_dump($post); ?>
+            <?php 
+                $request = $db->query('SELECT * FROM articles', 'App\Table\Article');
+                foreach ($request as $post): 
+            ?>
 
                 <li>
-                    <a href="<?php $post->getUrl(); ?>">
+                    <a href="<?= $post->getUrl(); ?>">
                         <?= $post->title; ?>
                     </a>
                 </li>
 
-                <p><?php $post->getExtrait(); ?></p>
-
+                <p><?= $post->getExtrait(); ?></p>
 
             <?php endforeach; ?>
         </ul>

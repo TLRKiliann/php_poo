@@ -18,21 +18,15 @@
         $p = 'home';
     }
 
-    //$db = new App\Database('mytable');
-
-    try {
-        $db = new App\Database('mytable');
-    } catch (Exception $e) {
-        echo 'Erreur lors de l\'instanciation de la classe Database : ' . $e->getMessage();
-        exit; // Arrêter l'exécution du script
-    }
+    //$_GLOBALS['db'] = new App\Database('mytable');
+    $db = new App\Database('mytable');
 
     //stock require into $content & access to page with $p option
     ob_start();
     if ($p === 'home') {
         require('../pages/home.php');
-    } elseif ($p === 'single') {
-        require('../pages/single.php');
+    } elseif ($p === 'article') {
+        require('../pages/article.php');
     }
     $content = ob_get_clean();
     require('../pages/templates/default.php');

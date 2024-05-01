@@ -2,7 +2,7 @@
     $login;
 	$about;
     $home;
-	$single;
+	$article;
 	$contact;
 	$str_session_name;
 ?>
@@ -24,8 +24,8 @@
 		</a>
 	</li>
 	<li>
-		<a href="<?php echo $single; ?>">
-			Single
+		<a href="<?php echo $article; ?>">
+			Article
 		</a>
 	</li>
 	<li>

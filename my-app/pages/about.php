@@ -10,7 +10,7 @@
     //routes
     $login = '../login/form.php';
     $home = 'home.php';
-    $single = 'single.php';
+    $article = 'article.php';
 	$about = 'about.php';
 	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();
