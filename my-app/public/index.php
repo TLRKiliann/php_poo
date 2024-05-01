@@ -15,9 +15,23 @@
     App\Autoloader::register();
     $form = new App\Form();
 
+    //dynamic pages with 'p' in URL
+    if (isset($_GET['p'])) {
+        $p = $_GET['p'];
+    } else {
+        $p = 'home';
+    }
 
+    $db = new App\Database('mytable');
 
-
+    ob_start();
+    if ($p === 'home') {
+        require('../pages/home.php');
+    } elseif ($p === 'single') {
+        require('../pages/single.php');
+    }
+    $content = ob_get_clean();
+    require('../pages/templates/default.php');
 
     //type - name - label
     $form->add_fields("username", "text", "Name");
