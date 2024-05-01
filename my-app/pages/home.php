@@ -15,13 +15,6 @@
 
     //---PDO
 
-/*     $pdo = new PDO('');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $res = $pdo->query('SELECT * FROM articles');
-    //var_dump($res->fetchAll(PDO::FETCH_OBJ));
-    $data = $res->fetchAll(PDO::FETCH_OBJ);
-    var_dump($data[0]->title); */
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +35,15 @@
         <main>
             <h1>Home</h1>
         </main>
+
+        <ul>
+            <?php foreach($db->query('SELECT * FROM articles') as $post); ?>
+                <li>
+                    <a href="index.php?p=post&id=<?= $post->id; ?>">
+                        <?= $post->title; ?>
+                    </a>
+                </li>
+        </ul>
 
     </body>
 
