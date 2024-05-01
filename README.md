@@ -2,11 +2,11 @@
 
 (under development)
 
-## Purpose of the project (PHP - JS)
+### Purpose of the project (PHP - JS)
 
 I wanted to build a PHP application to improve my skills in PHP OOP architecture with a homemade framework.
 
-## Run application
+### Run application
 
 `$ php -S localhost:8000`
 
@@ -14,7 +14,7 @@ I wanted to build a PHP application to improve my skills in PHP OOP architecture
 
 `localhost:8000/public/index.php`
 
-## Game
+### Game
 
 I added a game to make my application more fun and to enrich my code with javascript. My goal was to switch values from php to javascript. The user can fight the computer by choosing between attack and defense.
 
@@ -26,7 +26,7 @@ I added a game to make my application more fun and to enrich my code with javasc
 
 ---
 
-## Cookie
+### Cookie
 
 `includes/cookie_helper.php`
 
@@ -108,10 +108,69 @@ as shown in the example below:
 
 `setcookie("username", "", time() - 1)`;
 
-# OOP
+### OOP
 
 - class/Autoloader.php
 - class/Form.php
 - class/Game.php
 - pages/home.php
 
+### PDO
+
+Test PDO with MySQL:
+====================
+
+Fetch all table articles as shown below:
+
+```
+    $pdo = new PDO('');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $res = $pdo->query('SELECT * FROM articles');
+    var_dump($res->fetchAll(PDO::FETCH_OBJ));
+```
+
+Return only one article from `articles` table:
+
+```
+    $pdo = new PDO('');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $res = $pdo->query('SELECT * FROM articles');
+    $data = $res->fetchAll(PDO::FETCH_OBJ);
+    var_dump($data[0]->title);
+```
+
+### Dynamic Pages
+
+- public/index.php
+
+ob_start() & ob_get_clean(); => to store require into $content, otherwise it will be erase.
+
+```
+    ob_start();
+    if ($p === 'home') {
+        require('../pages/home.php');
+    } elseif ($p === 'single') {
+        require('../pages/single.php');
+    }
+    $content = ob_get_clean();
+    require('../pages/templates/default.php');
+```
+
+- pages/templates/default.php => $content
+
+---
+
+old autoloader
+
+
+        /*
+         * @param $class string
+        
+        static function autoload($class) {
+            $class = str_replace('App\\', '', $class);
+            $class = str_replace('\\', '/', $class);
+            require '../app/' . $class . '.php';
+        }
+        */
