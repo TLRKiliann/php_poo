@@ -1,27 +1,26 @@
-
 <!DOCTYPE html>
 <html>
 
     <head>
-        <?php require_once '../html/Head.php'; ?>
+        <?php //require_once '../html/Head.php'; ?>
     </head>
 
     <body>
 
-        <header>
+        <!-- header>
             <nav class="navbar">
-                <?php require_once '../html/Navbar.php'; ?>
+                <?php //require_once '../html/Navbar.php'; ?>
             </nav>   
-        </header>
+        </ -->
 
 
-        <head>
-            <?php require_once '../html/Head.php'; ?>
-        </head>
+        <!--head>
+            <?php //require_once '../html/Head.php'; ?>
+        </head -->
 
 
         <main>
-            <h1>Contact</h1>
+            <h1>Default (hidden page)</h1>
         
             <section>
 

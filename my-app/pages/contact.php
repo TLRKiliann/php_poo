@@ -8,9 +8,10 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = '../public/index.php';
+    $login = '../login/form.php';
 	$about = 'about.php';
     $home = 'home.php';
+    $single = 'single.php';
 	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>

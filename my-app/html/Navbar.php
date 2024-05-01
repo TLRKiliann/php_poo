@@ -2,6 +2,7 @@
     $login;
 	$about;
     $home;
+	$single;
 	$contact;
 	$str_session_name;
 ?>
@@ -20,6 +21,11 @@
 	<li>
 		<a href="<?php echo $home; ?>">
 			Home
+		</a>
+	</li>
+	<li>
+		<a href="<?php echo $single; ?>">
+			Single
 		</a>
 	</li>
 	<li>
