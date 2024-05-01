@@ -26,9 +26,11 @@
          * @return $this->pdo array
          */
         private function getPdo() {
-            $pdo = new PDO('mysql:dbname=mytable;host=192.168.18.9;port:3306', 'koala33', 'Ko@l@tr3379');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->pdo = $pdo;
+            if ($this->$pdo === null) {
+                $pdo = new PDO('mysql:dbname=mytable;host=192.168.18.9;port:3306', 'koala33', 'Ko@l@tr3379');
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $this->pdo = $pdo;
+            }
             return $this->pdo;   
         }
 
