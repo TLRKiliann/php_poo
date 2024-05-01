@@ -3,7 +3,7 @@
     require_once('../includes/cookie_helper.php');
 
     //head
-    $title = "Contact Page";
+    $title = "Single Page";
     $style = "../public/css/styles.css";
     $favicon = "../images/favicon.png";
 
@@ -14,6 +14,11 @@
     $article = 'article.php';
 	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();
+//<p><a href="index.php?p=single">Single</a></p>
+
+    require_once('../app/Autoloader.php');
+    App\Autoloader::register();
+    $db = new App\Database('mytable');
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +37,21 @@
         </header>
 
         <main>
-            <h1>Contact</h1>
+            <h1>Single</h1>
+
+            <section>
+                <?php $post = $db->prepare('SELECT * FROM articles WHERE id = ?', [$_GET['id']], 'App\Table\Article', true);?>
+            
+                <?php var_dump($post, "post");?>
+                <h2><?= $post->title; ?></h2>
+            
+                <p><?= $post->content ?></p>
+
+            </section>
+
         </main>
 
     </body>
 
 </html>
+

@@ -7,21 +7,24 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = '../public/index.php';
+    $login = '../login/form.php';
     $about = 'about.php';
     $home = 'home.php';
+    $article = 'article.php';
     $contact = 'contact.php';
     $str_session_name = get_username_from_cookie();
 
-    //---PDO
+    //---PDO make test with db here (README.md)
+    require_once('../app/Autoloader.php');
+    App\Autoloader::register();
+    $db = new App\Database('mytable');
 
-/*     $pdo = new PDO('');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $res = $pdo->query('SELECT * FROM articles');
-    //var_dump($res->fetchAll(PDO::FETCH_OBJ));
-    $data = $res->fetchAll(PDO::FETCH_OBJ);
-    var_dump($data[0]->title); */
+    /*
+    $pdo = new PDO('mysql:dbname=mytable;host=192.168.18.9;port=3306', 'koala33', 'Ko@l@tr3379');
+    $req = $pdo->query('SELECT * FROM articles');
+    $res = $req->fetchAll(PDO::FETCH_OBJ);
+    var_dump($res);
+    */
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +45,24 @@
         <main>
             <h1>Home</h1>
         </main>
+
+        <ul>
+            
+            <?php 
+                $request = $db->query('SELECT * FROM articles', 'App\Table\Article');
+                foreach ($request as $post): 
+            ?>
+
+                <li>
+                    <a href="<?= $post->getUrl(); ?>">
+                        <?= $post->title; ?>
+                    </a>
+                </li>
+
+                <p><?= $post->getExtrait(); ?></p>
+
+            <?php endforeach; ?>
+        </ul>
 
     </body>
 

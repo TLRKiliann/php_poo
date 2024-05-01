@@ -9,7 +9,7 @@
     
     $_SESSION['username'] = $username;
 
-    require_once('../class/Form.php');
+    require_once('../app/Form.php');
     use App\Form;
 
     $form = new Form();
@@ -20,9 +20,10 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = '../public/index.php';
+    $login = '../login/form.php';
 	$about = 'about.php';
     $home = 'home.php';
+    $article = 'article.php';
 	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>
