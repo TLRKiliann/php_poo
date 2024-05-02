@@ -8,11 +8,59 @@ I wanted to build a PHP application to improve my skills in PHP OOP architecture
 
 ### Run application
 
+before folder my-app:
+
 `$ php -S localhost:8000 -t my-app`
+
+or into my-app:
+
+`$ php -S localhost:8000`
 
 & in the browser bar:
 
 `localhost:8000/public/index.php`
+
+
+## Structure of folders
+
+This file /pages/templates/default.php interacts with public/index.php for routing.
+
+You need only one time the `session_start()` for all page excepted for `pages/contact.php`.
+I let volontary `contact.php` out of the dynamic system to observe difference between files from `pages/` folder.
+
+**Dynamic routing**
+
+- public/index.php
+
+`ob_start() & ob_get_clean();` => to store require into $content (default.php), otherwise it will be erase.
+
+```
+    ob_start();
+    if ($p === 'home') {
+        require('../pages/home.php');
+    } elseif ($p === 'single') {
+        require('../pages/single.php');
+    }
+    $content = ob_get_clean();
+    require('../pages/templates/default.php');
+```
+
+- pages/templates/default.php => $content
+
+---
+
+- old autoloader
+
+```
+    /**
+        * @param $class string
+    */
+    static function autoload($class) {
+        $class = str_replace('App\\', '', $class);
+        $class = str_replace('\\', '/', $class);
+        require '../app/' . $class . '.php';
+    }
+```
 
 ### Game
 
@@ -80,7 +128,7 @@ setcookie(
 Parameters of a cookie:
 =======================
 
-setcookie($name, $value = "", $expires_or_options = 0, $path = "", $domain = "", $secure = false, $httponly = false);
+setcookie($name(of cookie), $value = "Esteban", $expires_or_options = 0, $path = "", $domain = "", $secure = false, $httponly = false);
 
 ```
 secure
@@ -103,7 +151,9 @@ $datacookie = "value";
 setcookie("username", $datacookie);
 ```
 
-Otherwise, if expiration data has been defined, we need to store the time before the cookie was initialized,
+### Delete cookie
+
+Otherwise, if expiration data has been defined, we need to store the time before the date of creation,
 as shown in the example below:
 
 `setcookie("username", "", time() - 1)`;
@@ -140,37 +190,3 @@ Return only one article from `articles` table:
     $data = $res->fetchAll(PDO::FETCH_OBJ);
     var_dump($data[0]->title);
 ```
-
-### Dynamic Pages
-
-- public/index.php
-
-ob_start() & ob_get_clean(); => to store require into $content, otherwise it will be erase.
-
-```
-    ob_start();
-    if ($p === 'home') {
-        require('../pages/home.php');
-    } elseif ($p === 'single') {
-        require('../pages/single.php');
-    }
-    $content = ob_get_clean();
-    require('../pages/templates/default.php');
-```
-
-- pages/templates/default.php => $content
-
----
-
-old autoloader
-
-
-        /*
-         * @param $class string
-        
-        static function autoload($class) {
-            $class = str_replace('App\\', '', $class);
-            $class = str_replace('\\', '/', $class);
-            require '../app/' . $class . '.php';
-        }
-        */
