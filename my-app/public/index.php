@@ -14,20 +14,37 @@
     //dynamic pages with 'p' in URL
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
+    } elseif(isset($_GET['l'])) {
+        $l = 'login';
+    } elseif(isset($_GET['c'])) {
+        $c = 'confirmation';
+    } elseif(isset($_GET['a'])) {
+        $a = 'about';
+    } elseif(isset($_GET['g'])) {
+        $g = 'game';
     } else {
         $p = 'home';
     }
 
-    //$_GLOBALS['db'] = new App\Database('mytable');
     $db = new App\Database('mytable');
 
-    //stock require into $content & access to page with $p option
+    //stock require into cache
     ob_start();
     if ($p === 'home') {
         require('../pages/home.php');
     } elseif ($p === 'article') {
         require('../pages/article.php');
+    } elseif ($a === 'about') {
+        require('../pages/about.php');
+    } elseif($l === 'login') {
+        require('../login/form.php');
+    } elseif($c === 'confirmation') {
+        require('../pages/confirmation.php');
+    } elseif($g === 'game') {
+        require('../pages/game.php');
     }
     $content = ob_get_clean();
     require('../pages/templates/default.php');
+    //../public/index.php?l=login
+    //../public/index.php?c=confirmation
 ?>

@@ -51,11 +51,11 @@ main {
 
 .box-form {
     width: 400px;
-    margin: auto;
     background: #333;
     border-radius: 7px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    padding: 14px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    margin: auto;
+    padding: 20px;
 }
 
 form {
@@ -64,6 +64,8 @@ form {
     justify-content: center;
     background: #242424;
     border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    margin: auto;
 }
 
 .input-lbl {
@@ -81,12 +83,30 @@ form {
 }
 
 .submit-btn {
+    font-weight: bold;
+    background: #242424;
+    border: 1px solid #333;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    color: aqua;
     margin: 10px;
     padding: 5px 20px;
 }
 
-/*confirmation*/
+.submit-btn:hover {
+    background: #333;
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0.4);
+    color: lime;
+    padding: 5px 20px;
+}
 
+.submit-btn:active {
+    background: #f5f5f5;
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0.4);
+    color: #000;
+}
+
+/*confirmation*/
 .linktogame {
     color: #00ffff;
 }

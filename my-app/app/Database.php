@@ -13,7 +13,11 @@
         private $pdo;
 
         /**
-         * @param $db_name string $db_host string $db_port int $db_user string $db_passwd string
+         * @param $db_name string 
+         * @param $db_host string 
+         * @param $db_port int 
+         * @param $db_user string 
+         * @param $db_passwd string
          * @var $db_name = "mytable"
          */
         public function __construct($db_name, $db_host = '192.168.18.9',
