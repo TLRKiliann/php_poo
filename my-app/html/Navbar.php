@@ -2,7 +2,7 @@
     $login;
 	$about;
     $home;
-	$article;
+	$game;
 	$contact;
 	$str_session_name;
 ?>
@@ -14,6 +14,11 @@
 		</a>
 	</li>
 	<li>
+		<a href="<?php echo $game; ?>">
+			Game
+		</a>
+	</li>
+	<li>
 		<a href="<?php echo $about; ?>">
 			About
 		</a>
@@ -21,11 +26,6 @@
 	<li>
 		<a href="<?php echo $home; ?>">
 			Home
-		</a>
-	</li>
-	<li>
-		<a href="<?php echo $article; ?>">
-			Article
 		</a>
 	</li>
 	<li>
