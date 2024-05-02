@@ -8,7 +8,7 @@ I wanted to build a PHP application to improve my skills in PHP OOP architecture
 
 ### Run application
 
-`$ php -S localhost:8000`
+`$ php -S localhost:8000 -t my-app`
 
 & in the browser bar:
 
