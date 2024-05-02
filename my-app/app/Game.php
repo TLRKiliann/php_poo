@@ -20,7 +20,6 @@
         }
 
         public function get_atk(): int {
-            //$this->atk += 20;
             return $this->atk;
         }
 
