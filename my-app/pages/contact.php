@@ -8,11 +8,11 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = '../public/index.php?l=login';
-	$about = '../public/index.php?a=about';
+    $login = '../login/form.php';
+	$about = 'about.php';
     $home = '../public/index.php?p=home';
-    $game = '../public/index.php?g=game';
-	$contact = '../pages/contact.php';
+    $game = 'game.php';
+	$contact = 'contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>
 
