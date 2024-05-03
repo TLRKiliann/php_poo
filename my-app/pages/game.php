@@ -10,13 +10,8 @@
         exit();
     } 
 
-    $str_session_name = get_username_from_cookie();
-
-    echo 'nom récupéré_ ' . $str_session_name;
-
-    $user = new Game($str_session_name, 0, 100);
+    $user = new Game($_SESSION['username'], 0, 100);
     $computer = new Game("Computer", 0, 100);
-    var_dump($user->get_name());
 
     //head
     $title = "Game Page";
@@ -29,6 +24,7 @@
     $home = '../public/index.php?p=home';
     $game = 'game.php';
 	$contact = 'contact.php';
+    $str_session_name = get_username_from_cookie();
 ?>
     
 <!DOCTYPE html>
