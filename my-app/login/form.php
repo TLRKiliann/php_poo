@@ -50,8 +50,9 @@
                 </div>
             </div>
 
+            <a href="signup.php">Sign Up</a>
+
         </main>
     
     </body>
 </html>
-
