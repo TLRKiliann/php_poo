@@ -49,11 +49,14 @@ function changePlayer() {
         : "It's your turn!";
 }
 
-//random attack for both player
+//---random attack for both player
+
 function attackFunc() {
     let calc = Math.floor(Math.random() * 40) + 1;
     return calc;
 }
+
+//---display final result or game continue
 
 function computerUserStatus() {
     if (life_computer <= 0) {
@@ -82,7 +85,7 @@ function computer_atk() {
 let active_dfs_user = 0;
 let active_dfs_computer = 0;
 
-//---------------------------------------------AUTOMATA----------------------------------------------------------
+//--AUTOMATA (automatic computer decision)
 
 function randomComputerChoice() {
     let rand_number = Math.floor(Math.random() * 2) + 1;
@@ -92,50 +95,57 @@ function randomComputerChoice() {
 let defense_computer_counter = 0;
 
 function automata_compute() {
-    changePlayer();
-    animationSquare();
-    let random = randomComputerChoice();
-    if (random === 1) {
-        if (active_dfs_user === 1) {
-            let damage = attackFunc();
-            php_atk_player_2 = Math.floor(damage / 4);
-            console.log(php_atk_player_2, "attack number");
-            lblAtk_2.innerHTML = php_atk_player_2;
-            life_user -= php_atk_player_2;
-            displayer_life_1.innerHTML = `Life: ${life_user}`;
-            active_dfs_user = 0;
+    if (life_computer > 0) {
+        changePlayer();
+        animationSquare();
+        let random = randomComputerChoice();
+        if (random === 1) {
+            if (active_dfs_user === 1) {
+                let damage = attackFunc();
+                php_atk_player_2 = Math.floor(damage / 4);
+                console.log(php_atk_player_2, "player_2 atk/4");
+                lblAtk_2.innerHTML = php_atk_player_2;
+                life_user -= php_atk_player_2;
+                displayer_life_1.innerHTML = `Life: ${life_user}`;
+                active_dfs_user = 0;
+            } else {
+                computer_atk();
+            }
+        } else if (random == 2) {
+            defense_computer_counter++;
+            if (defense_computer_counter > 3) {
+                run_player.innerHTML = "No more defense (3 = max)";
+                setTimeout(() => { 
+                    animationSquare();
+                    computer_atk();
+                }, 3000);
+            } else {
+                active_dfs_computer = 1;
+                dfs_computer.innerHTML = `${defense_computer_counter}`;
+            }
         } else {
-            computer_atk();
-        }
-    } else if (random == 2) {
-        defense_computer_counter++;
-        if (defense_computer_counter > 3) {
-            run_player.innerHTML = "No more defense (3 = max)";
-            setTimeout(computer_atk, 3000);
-        } else {
-            active_dfs_computer = 1;
-            dfs_computer.innerHTML = `${defense_computer_counter}`;
+            console.log("Error random");
         }
     } else {
-        console.log("Error random");
+        console.log("Computer is dead");
     }
 }
 
 //---------------------------------------------USER ATK----------------------------------------------------------
 
-//atk from player one
+//---atk from player one
+
 function userAttaker() {
     animationSquare();
     changePlayer();
     if (active_dfs_computer === 1) {
         let damage = attackFunc();
         php_atk_player_1 = Math.floor(damage / 4);
-        console.log(php_atk_player_1, "attack number against computer");
+        console.log(php_atk_player_1, "player_1 atk/4");
         lblAtk.innerHTML = php_atk_player_1;
         life_computer -= php_atk_player_1;
         displayer_life_2.innerHTML = `Life: ${life_computer}`;
         active_dfs_computer = 0;
-        
         setTimeout(automata_compute, 3000);
     } else {
         let damage = attackFunc();
@@ -143,7 +153,6 @@ function userAttaker() {
         lblAtk.innerHTML = php_atk_player_1;
         life_computer -= php_atk_player_1;
         displayer_life_2.innerHTML = `Life: ${life_computer}`;
-
         setTimeout(automata_compute, 3000);
     }
     computerUserStatus();
@@ -153,7 +162,8 @@ btnAtk.addEventListener("click", () => userAttaker());
 
 //---------------------------------------------USER DEFENSE----------------------------------------------------------
 
-//dfs player one click
+//---dfs player one click
+
 let count_dfs_player = 0;
 
 function userDefense() {
@@ -167,15 +177,13 @@ function userDefense() {
         active_dfs_user = 1;
         if (life_computer >= 0) {
             setTimeout(automata_compute, 3000);
-        } else {
-            console.log("You are dead");
         }
     }
 };
 
 btn_dfs_user.addEventListener("click", () => userDefense());
 
-//---refresh
+//---refresh (at the end of game)
 
 refresher.addEventListener("click", () => {
     window.location.reload();
