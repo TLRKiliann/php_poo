@@ -52,10 +52,10 @@
                     echo '<a class="linktogame" href="../pages/game.php">Go to game !</a>';
                 } else {
                     echo "Nom d'utilisateur ou mot de passe incorrect. ";
-                    echo '<a class="goback" href="login.php">Retour à la page d\'accueil</a>';
+                    echo '<a class="goback" href="form.php">Retour à la page d\'accueil</a>';
                 }
             } else {
-                header("Location: login.php");
+                header("Location: form.php");
                 exit();
             }
         ?>
