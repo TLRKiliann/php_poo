@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once('../includes/cookie_helper.php');
     require('../app/Form.php');
 
@@ -9,26 +10,48 @@
     $form->add_fields("password", "password", "Password");
 
     //head
-/*     $title = "Login Page";
+    $title = "Login Page";
     $style = "../public/css/styles.css";
     $favicon = "../images/favicon.png";
- */
-/*     //routes
-    $login = '../public/index.php?l=login';
-	$about = '../public/index.php?a=about';
-    $home = '../public/index.php?p=home';
-    $game = '../public/index.php?g=game';
-    $article = '../pages/article.php';
-	$contact = '../pages/contact.php';
-	$str_session_name = get_username_from_cookie(); */
-?>
-    <h1>Login</h1>
 
-    <div class="container-form">
-        <div class="box-form">
-            <?php 
-                echo $form->generator();
-            ?>
-        </div>
-    </div>
+    //routes
+    $home = '../public/index.php?p=home';
+    $game = '../pages/game.php';
+	$about = '../pages/about.php';
+    $contact = '../pages/contact.php';
+    $login = 'form.php';
+    $str_session_name = get_username_from_cookie();
+?>
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <?php require_once '../html/Head.php'; ?>
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar">
+                <?php require_once '../html/Navbar.php'; ?>
+            </nav>   
+        </header>
+
+        <main>
+
+            <h1>Login</h1>
+
+            <div class="container-form">
+                <div class="box-form">
+                    <?php 
+                        echo $form->generator();
+                    ?>
+                </div>
+            </div>
+
+        </main>
+    
+    </body>
+</html>
 

@@ -14,14 +14,6 @@
     //dynamic pages with 'p' in URL
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
-    } elseif(isset($_GET['l'])) {
-        $l = 'login';
-    } elseif(isset($_GET['c'])) {
-        $c = 'confirmation';
-    } elseif(isset($_GET['a'])) {
-        $a = 'about';
-    } elseif(isset($_GET['g'])) {
-        $g = 'game';
     } else {
         $p = 'home';
     }
@@ -31,20 +23,12 @@
     //stock require into cache
     ob_start();
     if ($p === 'home') {
-        require('../pages/home.php');
+        require('../journal/home.php');
     } elseif ($p === 'article') {
-        require('../pages/article.php');
-    } elseif ($a === 'about') {
-        require('../pages/about.php');
-    } elseif($l === 'login') {
-        require('../login/form.php');
-    } elseif($c === 'confirmation') {
-        require('../pages/confirmation.php');
-    } elseif($g === 'game') {
-        require('../pages/game.php');
+        require('../journal/article.php');
+    } else {
+        require('../journal/home.php');
     }
     $content = ob_get_clean();
-    require('../pages/templates/default.php');
-    //../public/index.php?l=login
-    //../public/index.php?c=confirmation
+    require('../journal/templates/default.php');
 ?>

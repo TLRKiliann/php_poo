@@ -3,12 +3,8 @@
     require_once('../includes/cookie_helper.php');
     $str_session_name = get_username_from_cookie();
 
-    if (!empty($_SESSION['username'])) {
-        echo 'login ok';
-        echo $str_session_name;
-    } else {
-        echo 'not logged in !';
-        //header('Location: ../public/index.php?c=confirmation');
+    if (!isset($_SESSION['username'])) {
+        header('Location: ../login/form.php');
     }
 
     //head
@@ -17,10 +13,10 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = '../public/index.php?l=login';
-	$about = '../public/index.php?a=about';
+    $login = '../login/form.php';
+	$about = '../pages/about.php';
     $home = '../public/index.php?p=home';
-    $game = '../public/index.php?g=game';
+    $game = '../pages/game.php';
 	$contact = '../pages/contact.php';
 	$str_session_name = get_username_from_cookie();
 ?>
@@ -44,7 +40,7 @@
 
             <?= $content; ?>
 
-            <h1>Content is displayed from pages/templates/default.php</h1>
+            <h1>Content is displayed from journal/templates/default.php</h1>
 
         </main>
 

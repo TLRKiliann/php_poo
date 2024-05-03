@@ -8,12 +8,12 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = '../public/index.php?l=login';
-	$about = '../public/index.php?a=about';
     $home = '../public/index.php?p=home';
-    $game = '../public/index.php?g=game';
-	$contact = '../pages/contact.php';
-	$str_session_name = get_username_from_cookie();
+    $game = 'game.php';
+	$about = 'about.php';
+	$contact = 'contact.php';
+    $login = '../login/form.php';
+    $str_session_name = get_username_from_cookie();
 ?>
 
 <!DOCTYPE html>

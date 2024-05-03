@@ -25,21 +25,20 @@ or into my-app:
 
 This file /pages/templates/default.php interacts with public/index.php for routing.
 
-You need only one time the `session_start()` for all page excepted for `pages/contact.php`.
-I let volontary `contact.php` out of the dynamic system to observe difference between files from `pages/` folder.
+You need only one time the `session_start()` for `home.php` & `article.php`.
 
 **Dynamic routing**
 
 - public/index.php
 
-`ob_start() & ob_get_clean();` => to store require into $content (default.php), otherwise it will be erase.
+`ob_start() & ob_get_clean();` => to store require into `$content` (default.php), otherwise it will be erase.
 
 ```
     ob_start();
     if ($p === 'home') {
         require('../pages/home.php');
-    } elseif ($p === 'single') {
-        require('../pages/single.php');
+    } elseif ($p === 'article') {
+        require('../pages/article.php');
     }
     $content = ob_get_clean();
     require('../pages/templates/default.php');

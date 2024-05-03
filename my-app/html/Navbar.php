@@ -9,8 +9,8 @@
 
 <ul>
 	<li>
-		<a href="<?php echo $login; ?>">
-			Login
+		<a href="<?php echo $home; ?>">
+			Home
 		</a>
 	</li>
 	<li>
@@ -23,14 +23,15 @@
 			About
 		</a>
 	</li>
-	<li>
-		<a href="<?php echo $home; ?>">
-			Home
-		</a>
-	</li>
+
 	<li>
 		<a href="<?php echo $contact; ?>">
 			Contact
+		</a>
+	</li>
+	<li>
+		<a href="<?php echo $login; ?>">
+			Login
 		</a>
 	</li>
 	<?php
