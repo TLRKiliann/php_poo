@@ -2,10 +2,15 @@
     session_start();
     require_once('../includes/cookie_helper.php');
     
+    // Avoid XSS (cross site scripting) !
     $username = htmlspecialchars($_POST['username']);
-    $cookie_name = "username";
-    setcookie($cookie_name, $username, time() + 365 * 24 * 3600, null, null, false, false);
     
+    $cookie_name = "username";
+    setcookie($cookie_name, $username, time() + 365 * 24 * 3600, '/', null, false, false);
+    /*
+        Delete cookie with:
+        setcookie($cookie_name, "", time() - 10);
+    */
     $_SESSION['username'] = $username;
 
     //login
@@ -25,7 +30,9 @@
 	$about = '../pages/about.php';
     $contact = '../pages/contact.php';
     $login = 'form.php';
-    $str_session_name = get_username_from_cookie();    
+    $str_session_name = get_username_from_cookie();
+
+    var_dump($str_session_name, "C'est le cookie");
 ?>
 <!DOCTYPE html>
 <html>
