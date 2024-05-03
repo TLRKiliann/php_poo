@@ -3,6 +3,9 @@
 
     class Article
     {
+        /*
+            Avoid SQL injection by $_GET['id']
+        */
         public function getUrl() {
             return '../public/index.php?p=article&id=' . $this->id;
         }

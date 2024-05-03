@@ -1,10 +1,8 @@
 <?php
-    $login;
-	$about;
     $home;
 	$game;
+	$about;
 	$contact;
-	$str_session_name;
 ?>
 
 <ul>
@@ -29,16 +27,4 @@
 			Contact
 		</a>
 	</li>
-	<li>
-		<a href="<?php echo $login; ?>">
-			Login
-		</a>
-	</li>
-	<?php
-		if (isset($str_session_name)) {
-			echo '<li><a>' . $str_session_name . '</a></li>';
-		} else {
-			echo '<li><a>login</a></li>';
-		}
-	?>
 </ul>
