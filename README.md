@@ -32,14 +32,14 @@ I let volontary `contact.php` out of the dynamic system to observe difference be
 
 - public/index.php
 
-`ob_start() & ob_get_clean();` => to store require into $content (default.php), otherwise it will be erase.
+`ob_start() & ob_get_clean();` => to store require into `$content` (default.php), otherwise it will be erase.
 
 ```
     ob_start();
     if ($p === 'home') {
         require('../pages/home.php');
-    } elseif ($p === 'single') {
-        require('../pages/single.php');
+    } elseif ($p === 'article') {
+        require('../pages/article.php');
     }
     $content = ob_get_clean();
     require('../pages/templates/default.php');
