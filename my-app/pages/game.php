@@ -2,27 +2,33 @@
     session_start();
     require_once('../includes/cookie_helper.php');
     require_once('../app/Game.php');
+    use App\Game;
 
-    //$str_session_name = $_SESSION['username'];
+    //return to login if $_SESSION not set
+    if (!isset($_SESSION['username'])) {
+        header('Location: ../login/form.php');
+        exit();
+    } 
+
     $str_session_name = get_username_from_cookie();
 
-    use App\Game;
+    echo 'nom récupéré_ ' . $str_session_name;
 
     $user = new Game($str_session_name, 0, 100);
     $computer = new Game("Computer", 0, 100);
+    var_dump($user->get_name());
 
     //head
-    $title = "Contact Page";
+    $title = "Game Page";
     $style = "../public/css/styles.css";
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = 'login.php';
+    $login = '../login/form.php';
 	$about = 'about.php';
     $home = '../public/index.php?p=home';
     $game = 'game.php';
 	$contact = 'contact.php';
-	$str_session_name = get_username_from_cookie();
 ?>
     
 <!DOCTYPE html>
