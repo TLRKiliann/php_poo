@@ -134,7 +134,7 @@
 
                     <p class="paragraph">(You only have 3 defenses per round)</p>
 
-                    <div class="square-move">
+                    <div class="square-frame">
                         <div id="square">
                         </div>
                     </div>
