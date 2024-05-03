@@ -26,6 +26,8 @@
         require('../journal/home.php');
     } elseif ($p === 'article') {
         require('../journal/article.php');
+    } else {
+        require('../journal/home.php');
     }
     $content = ob_get_clean();
     require('../journal/templates/default.php');

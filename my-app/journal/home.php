@@ -3,6 +3,7 @@
     App\Autoloader::register();
     $db = new App\Database('mytable');
 ?>
+    <h1>Home</h1>
 
     <?php foreach ($db->query('SELECT * FROM articles', 'App\Table\Article') as $post): ?>
 

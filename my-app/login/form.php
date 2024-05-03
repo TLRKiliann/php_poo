@@ -15,12 +15,12 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = 'form.php';
-	$about = '../pages/about.php';
     $home = '../public/index.php?p=home';
     $game = '../pages/game.php';
-	$contact = '../pages/contact.php';
-	$str_session_name = get_username_from_cookie();
+	$about = '../pages/about.php';
+    $contact = '../pages/contact.php';
+    $login = 'form.php';
+    $str_session_name = get_username_from_cookie();
 ?>
 
 <!DOCTYPE html>
@@ -38,15 +38,19 @@
             </nav>   
         </header>
 
-        <h1>Login</h1>
+        <main>
 
-        <div class="container-form">
-            <div class="box-form">
-                <?php 
-                    echo $form->generator();
-                ?>
+            <h1>Login</h1>
+
+            <div class="container-form">
+                <div class="box-form">
+                    <?php 
+                        echo $form->generator();
+                    ?>
+                </div>
             </div>
-        </div>
+
+        </main>
     
     </body>
 </html>

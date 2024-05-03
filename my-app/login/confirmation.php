@@ -20,12 +20,12 @@
     $favicon = "../images/favicon.png";
 
     //routes
-    $login = 'form.php';
-	$about = '../pages/about.php';
     $home = '../public/index.php?p=home';
     $game = '../pages/game.php';
-	$contact = '../pages/contact.php';
-	$str_session_name = get_username_from_cookie();    
+	$about = '../pages/about.php';
+    $contact = '../pages/contact.php';
+    $login = 'form.php';
+    $str_session_name = get_username_from_cookie();    
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,23 +42,27 @@
             </nav>   
         </header>
 
-        <h1>Confirmation</h1>
+        <main>
 
-        <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $password = $_POST['password'];
-                if ($form->validate_credentials($username, $password)) {
-                    echo "Bienvenue, " . $username . "! Vous êtes connecté. ";
-                    echo '<a class="linktogame" href="../pages/game.php">Go to game !</a>';
+            <h1>Confirmation</h1>
+
+            <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $password = $_POST['password'];
+                    if ($form->validate_credentials($username, $password)) {
+                        echo "Bienvenue, " . $username . "! Vous êtes connecté. ";
+                        echo '<a class="linktogame" href="../pages/game.php">Go to game !</a>';
+                    } else {
+                        echo "Nom d'utilisateur ou mot de passe incorrect. ";
+                        echo '<a class="goback" href="form.php">Retour à la page d\'accueil</a>';
+                    }
                 } else {
-                    echo "Nom d'utilisateur ou mot de passe incorrect. ";
-                    echo '<a class="goback" href="form.php">Retour à la page d\'accueil</a>';
+                    header("Location: form.php");
+                    exit();
                 }
-            } else {
-                header("Location: form.php");
-                exit();
-            }
-        ?>
+            ?>
+
+        </main>
 
     </body>
 </html>
