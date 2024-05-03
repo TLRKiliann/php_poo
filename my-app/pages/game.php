@@ -4,13 +4,28 @@
     require_once('../app/Game.php');
     use App\Game;
 
-    //return to login if $_SESSION not set
-    if (empty($_SESSION['username'])) {
+    //$display_uri = $_SERVER['REQUEST_URI'];
+    //var_dump($display_uri, "server_uri");
+
+    $display_software = $_SERVER['SERVER_SOFTWARE'];
+    var_dump($display_software, "server_software");
+
+    $display_proto = $_SERVER['SERVER_PROTOCOL'];
+    var_dump($display_proto, 'path_proto');
+
+    $str_session_name = get_username_from_cookie();
+
+    //returns to login if $_SESSION not defined
+    if (empty($str_session_name)) {
         header('Location: ../login/form.php');
         exit();
     } 
 
-    $user = new Game($_SESSION['username'], 0, 100);
+    /*
+        It's preferable to retrieve cookie value 
+        rather than $_SESSION['username'];
+    */
+    $user = new Game($str_session_name, 0, 100);
     $computer = new Game("Computer", 0, 100);
 
     //head
@@ -24,7 +39,6 @@
 	$about = 'about.php';
 	$contact = 'contact.php';
     $login = '../login/form.php';
-    $str_session_name = get_username_from_cookie();
 ?>
     
 <!DOCTYPE html>
