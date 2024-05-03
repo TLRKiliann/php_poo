@@ -5,7 +5,7 @@
     use App\Game;
 
     //return to login if $_SESSION not set
-    if (!isset($_SESSION['username'])) {
+    if (empty($_SESSION['username'])) {
         header('Location: ../login/form.php');
         exit();
     } 
@@ -44,105 +44,114 @@
 
         <main>
 
-            <h1>Game</h1>
+            <h1 class="h1-game">Game</h1>
 
-            <p class="paragraph">atk = attack (random 1 - 40)</p>
-            <p class="paragraph">dfs = defense (atk/4)</p>
+            <div class="container-game">
 
-            <section class="container-sect">
+                <div class="box-game">
 
-                <section class="sect-player-one">
+                    <p class="paragraph">atk = attack (random 1 - 40)</p>
+                    <p class="paragraph">dfs = defense (atk/4)</p>
 
-                    <h2>
-                        <?php echo $user->get_name(); ?>
-                    </h2>
+                    <section class="container-sect">
 
-                    <div id="div-php">
-                        <?php
-                            $getLife = $user->get_life();
-                            echo "Life: " . $getLife;
-                            $php_atk = $user->get_atk();
-                        ?>
+                        <section class="sect-player-one">
 
-                        <script type="text/javascript">
-                            let life_js = '<?php echo $getLife; ?>';
-                        </script>
+                            <h2>
+                                <?php echo $user->get_name(); ?>
+                            </h2>
 
+                            <div id="div-php">
+                                <?php
+                                    $getLife = $user->get_life();
+                                    echo "Life: " . $getLife;
+                                    $php_atk = $user->get_atk();
+                                ?>
+
+                                <script type="text/javascript">
+                                    let life_js = '<?php echo $getLife; ?>';
+                                </script>
+
+                            </div>
+
+                            <div class="box-btnlbl">
+                                <div class="box-atk">
+                                    <button type="button" id="btn_atk">Atk</button>
+                                    <label id="lbl_atk"></label>
+
+                                    <script type="text/javascript">
+                                        let js_atk  = '<?php echo $php_atk; ?>';
+                                    </script>
+                                </div>
+
+                                <div class="box-dfs">
+                                    <label id="lbl_dfs_1"></label>
+                                    <button type="button" id="btn_dfs_1">Dfs</button>                        
+                                </div>
+                            </div>
+
+                        </section>
+
+                        <section class="sect-player-two">
+
+                            <h2>
+                                <?php echo $computer->get_name(); ?>
+                            </h2>
+
+                            <div id="div-php2">
+                                
+                                <?php
+                                    $getLife2 = $computer->get_life();
+                                    echo "Life: " . $getLife2;
+                                    $php_atk_2 = $computer->get_atk();
+                                ?>
+
+                                <script type="text/javascript">
+                                    let life_js2 = '<?php echo $getLife2; ?>';
+                                </script>
+
+                            </div>
+
+                            <div class="box-btnlbl">
+                                <div class="box-atk">
+                                    <button type="button" id="btn_atk_2" disabled>Atk</button>
+                                    <label id="lbl_atk_2"></label>
+                                    
+                                    <script type="text/javascript">
+                                        let js_atk_2  = '<?php echo $php_atk_2; ?>';
+                                    </script>
+                                </div>
+
+                                <div class="box-dfs">
+                                    <label id="lbl_dfs_2"></label>
+                                    <button type="button" id="btn_dfs_2" disabled>Dfs</button>
+                                </div>
+                            </div>
+
+                        </section>
+
+                    </section>
+
+                    <p class="paragraph">(You only have 3 defenses per round)</p>
+
+                    <div class="square-move">
+                        <div id="square">
+                        </div>
                     </div>
 
-                    <div class="box-btnlbl">
-                        <div class="box-atk">
-                            <button type="button" id="btn_atk">Atk</button>
-                            <label id="lbl_atk"></label>
-
-                            <script type="text/javascript">
-                                let js_atk  = '<?php echo $php_atk; ?>';
-                            </script>
-                        </div>
-
-                        <div class="box-dfs">
-                            <label id="lbl_dfs_1"></label>
-                            <button type="button" id="btn_dfs_1">Dfs</button>                        
-                        </div>
+                    <div class="message-round">
+                        <p id="round-player"></p>
                     </div>
 
-                </section>
-
-                <section class="sect-player-two">
-
-                    <h2>
-                        <?php echo $computer->get_name(); ?>
-                    </h2>
-
-                    <div id="div-php2">
-                        
-                        <?php
-                            $getLife2 = $computer->get_life();
-                            echo "Life: " . $getLife2;
-                            $php_atk_2 = $computer->get_atk();
-                        ?>
-
-                        <script type="text/javascript">
-                            let life_js2 = '<?php echo $getLife2; ?>';
-                        </script>
-
+                    <div class="refresher-box">
+                        <button type="button" id="btn-refresh">
+                            Refresh
+                        </button>
                     </div>
 
-                    <div class="box-btnlbl">
-                        <div class="box-atk">
-                            <button type="button" id="btn_atk_2">Atk</button>
-                            <label id="lbl_atk_2"></label>
-                            
-                            <script type="text/javascript">
-                                let js_atk_2  = '<?php echo $php_atk_2; ?>';
-                            </script>
-                        </div>
 
-                        <div class="box-dfs">
-                            <label id="lbl_dfs_2"></label>
-                            <button type="button" id="btn_dfs_2">Dfs</button>
-                        </div>
-                    </div>
-
-                </section>
-
-            </section>
-
-            <p class="paragraph">(You only have 3 defenses per round)</p>
-
-            <div class="square-move">
-                <div id="square">
                 </div>
-            </div>
 
-            <div class="message-round">
-                <p id="round-player"></p>
-            </div>
-
-            <div class="refresher-box">
-                <button type="button" id="btn-refresh">
-                    Refresh
-                </button>
             </div>
 
         </main>
