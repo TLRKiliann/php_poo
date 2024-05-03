@@ -25,8 +25,7 @@ or into my-app:
 
 This file /pages/templates/default.php interacts with public/index.php for routing.
 
-You need only one time the `session_start()` for all page excepted for `pages/contact.php`.
-I let volontary `contact.php` out of the dynamic system to observe difference between files from `pages/` folder.
+You need only one time the `session_start()` for `home.php` & `article.php`.
 
 **Dynamic routing**
 
