@@ -23,10 +23,10 @@
     //stock require into cache
     ob_start();
     if ($p === 'home') {
-        require('../pages/home.php');
+        require('../journal/home.php');
     } elseif ($p === 'article') {
-        require('../pages/article.php');
+        require('../journal/article.php');
     }
     $content = ob_get_clean();
-    require('../pages/templates/default.php');
+    require('../journal/templates/default.php');
 ?>
