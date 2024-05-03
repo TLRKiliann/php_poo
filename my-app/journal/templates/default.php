@@ -41,7 +41,7 @@
             <?= $content; ?>
 
             <h1>Content is displayed from journal/templates/default.php</h1>
-
+    
         </main>
 
     </body>
