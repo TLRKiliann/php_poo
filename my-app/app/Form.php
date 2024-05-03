@@ -20,7 +20,7 @@
             foreach($this->fields as $field) {
                 $formHtml .= '<div class="input-lbl">';
                 $formHtml .= '<label>' . $field['label'] . ': </label>';
-                $formHtml .= '<input type="' . $field['type'] . '" name="' . $field['name'] . '" >';
+                $formHtml .= '<input type="' . $field['type'] . '" name="' . $field['name'] . '">';
                 $formHtml .= '</div>';
             }
             $formHtml .= '<input type="submit" value="submit" class="submit-btn">';
