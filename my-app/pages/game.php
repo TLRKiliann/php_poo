@@ -159,7 +159,9 @@
 
                     </section>
 
-                    <p class="paragraph">(You only have <span><i>3x</i> Dfs</span> & <span><i>1x</i> Heal</span> per round)</p>
+                    <p class="paragraph">(You only have <span class="span">
+                        <i>3x</i> Dfs</span> & <span class="span">
+                        <i>1x</i> Heal</span> per round)</p>
 
                     <div class="square-frame">
                         <div id="square">
