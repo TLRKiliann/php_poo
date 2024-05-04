@@ -64,8 +64,9 @@
 
                 <div class="box-game">
 
-                    <p class="paragraph">atk = attack (random 1 - 40)</p>
-                    <p class="paragraph">dfs = defense (atk/4)</p>
+                    <p class="paragraph">Atk = attack (random 1 - 40)</p>
+                    <p class="paragraph">Heal = +20</p>
+                    <p class="paragraph">Dfs = defense (atk/4)</p>
 
                     <section class="container-sect">
 
@@ -90,18 +91,24 @@
 
                             <div class="box-btnlbl">
                                 <div class="box-atk">
-                                    <button type="button" id="btn_atk">Atk</button>
-                                    <label id="lbl_atk"></label>
+                                    <button type="button" id="btn_atk_user">Atk</button>
+                                    <label id="lbl_atk_user"></label>
 
                                     <script type="text/javascript">
                                         let js_atk  = '<?php echo $php_atk; ?>';
                                     </script>
                                 </div>
 
-                                <div class="box-dfs">
-                                    <label id="lbl_dfs_1"></label>
-                                    <button type="button" id="btn_dfs_1">Dfs</button>                        
+                                <div class="box-heal">
+                                    <button type="button" id="btn_heal_user">Heal</button>
+                                    <label id="lbl_heal_user"></label>
                                 </div>
+
+                                <div class="box-dfs">
+                                    <button type="button" id="btn_dfs_user">Dfs</button>
+                                    <label id="lbl_dfs_user"></label>
+                                </div>
+
                             </div>
 
                         </section>
@@ -128,25 +135,31 @@
 
                             <div class="box-btnlbl">
                                 <div class="box-atk">
-                                    <button type="button" id="btn_atk_2" disabled>Atk</button>
-                                    <label id="lbl_atk_2"></label>
+                                    <button type="button" id="btn_atk_computer" disabled>Atk</button>
+                                    <label id="lbl_atk_computer"></label>
                                     
                                     <script type="text/javascript">
                                         let js_atk_2  = '<?php echo $php_atk_2; ?>';
                                     </script>
                                 </div>
 
-                                <div class="box-dfs">
-                                    <label id="lbl_dfs_2"></label>
-                                    <button type="button" id="btn_dfs_2" disabled>Dfs</button>
+                                <div class="box-heal">
+                                    <button type="button" id="btn_heal_computer">Heal</button>
+                                    <label id="lbl_heal_computer"></label>
                                 </div>
+                                
+                                <div class="box-dfs">
+                                    <button type="button" id="btn_dfs_computer" disabled>Dfs</button>
+                                    <label id="lbl_dfs_computer"></label>
+                                </div>
+
                             </div>
 
                         </section>
 
                     </section>
 
-                    <p class="paragraph">(You only have 3 defenses per round)</p>
+                    <p class="paragraph">(You only have <span><i>3x</i> Dfs</span> & <span><i>1x</i> Heal</span> per round)</p>
 
                     <div class="square-frame">
                         <div id="square">
