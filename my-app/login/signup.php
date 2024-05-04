@@ -1,24 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulaire d'inscription</title>
-    </head>
-    <body>
-        <h2>Formulaire d'inscription</h2>
-        <form action="treatment.php" method="post">
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" required><br><br>
+<?php
+    //head
+    $title = "Sign Up Confirmed";
+    $style = "../public/css/styles.css";
+    $favicon = "../images/favicon.png";
 
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required><br><br>
+    //routes
+    $home = '../public/index.php?p=home';
+    $game = '../pages/game.php';
+	$about = '../pages/about.php';
+    $contact = '../pages/contact.php';
+    $login = 'form.php';
+    //$str_session_name = get_username_from_cookie();
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php require_once '../html/Head.php'; ?>
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar">
+                <?php require_once '../html/Navbar.php'; ?>
+            </nav>   
+        </header>
+
+        <main>
+
+            <h2>Sign Up</h2>
             
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required><br><br>
-            
-            <input type="submit" value="S'inscrire">
-        </form>
+            <div class="container-form">
+                <div class="box-form">
+                    <div class="sub-form">
+
+                        <form action="treatment.php" method="post">
+                            <label for="username">Username :</label>
+                            <input type="text" id="username" name="username" required><br><br>
+
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email" required><br><br>
+
+                            <label for="password">Password :</label>
+                            <input type="password" id="password" name="password" required><br><br>
+
+                            <input type="submit" value="S'inscrire" class="submit-btn">
+                        </form>
+                        <div class="signup-div">
+                            <a href="form.php" class="signup">Go to login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
     </body>
 </html>
 

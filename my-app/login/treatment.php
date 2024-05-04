@@ -1,5 +1,5 @@
 <?php
-    //Retrive data from db
+    //Retrive data from db by id
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -13,7 +13,7 @@
     $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
     $stmt->execute(array(':username' => $username, ':email' => $email, ':password' => $hashed_password));
 
-    echo "Inscription success !";
+    echo "Sign Up success !";
 
     //head
     $title = "Sign Up Confirmed";

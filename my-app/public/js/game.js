@@ -10,19 +10,27 @@ let life_computer = life_js2;
 life_user = parseInt(life_user); 
 life_computer = parseInt (life_computer);
 
-//dfs player one
-const btn_dfs_user = document.getElementById("btn_dfs_1");
-const dfs_player_1 = document.getElementById("lbl_dfs_1");
-const dfs_computer = document.getElementById("lbl_dfs_2");
+//atk action btn
+const btnAtk_user = document.getElementById("btn_atk_user");
+const lblAtk_user = document.getElementById("lbl_atk_user");
 
-//retrieve atk by id
-const btnAtk = document.getElementById("btn_atk");
-const lblAtk = document.getElementById("lbl_atk");
-const lblAtk_2 = document.getElementById("lbl_atk_2");
+const lblAtk_computer = document.getElementById("lbl_atk_computer");
+
+//heal action btn
+const btn_heal_user = document.getElementById('btn_heal_user');
+const lbl_heal_user = document.getElementById("lbl_heal_user");
+
+const lbl_heal_computer = document.getElementById("lbl_heal_computer");
+
+//dfs action btn
+const btn_dfs_user = document.getElementById("btn_dfs_user");
+const dfs_player_user = document.getElementById("lbl_dfs_user");
+
+const dfs_computer = document.getElementById("lbl_dfs_computer");
 
 //display life in lbl
-const displayer_life_1 = document.getElementById('div-php');
-const displayer_life_2 = document.getElementById('div-php2');
+const displayer_life_user = document.getElementById('div-php');
+const displayer_life_computer = document.getElementById('div-php2');
 
 //display message player
 const run_player = document.getElementById("round-player");
@@ -76,9 +84,9 @@ function computerUserStatus() {
 function computer_atk() {
     let damage = attackFunc();
     php_atk_player_2 = damage;
-    lblAtk_2.innerHTML = php_atk_player_2;
+    lblAtk_computer.innerHTML = `${php_atk_player_2}`; //to verify !!!
     life_user -= php_atk_player_2;
-    displayer_life_1.innerHTML = `Life: ${life_user}`;
+    displayer_life_user.innerHTML = `Life: ${life_user}`;
     computerUserStatus();
 };
 
@@ -88,11 +96,12 @@ let active_dfs_computer = 0;
 //--AUTOMATA (automatic computer decision)
 
 function randomComputerChoice() {
-    let rand_number = Math.floor(Math.random() * 2) + 1;
+    let rand_number = Math.floor(Math.random() * 3) + 1;
     return rand_number;
 }
 
 let defense_computer_counter = 0;
+let count_heal_computer = 0;
 
 function automata_compute() {
     if (life_computer > 0) {
@@ -104,14 +113,14 @@ function automata_compute() {
                 let damage = attackFunc();
                 php_atk_player_2 = Math.floor(damage / 4);
                 console.log(php_atk_player_2, "player_2 atk/4");
-                lblAtk_2.innerHTML = php_atk_player_2;
+                lblAtk_computer.innerHTML = `${php_atk_player_2}`; // to verify !!!
                 life_user -= php_atk_player_2;
-                displayer_life_1.innerHTML = `Life: ${life_user}`;
+                displayer_life_user.innerHTML = `Life: ${life_user}`;
                 active_dfs_user = 0;
             } else {
                 computer_atk();
             }
-        } else if (random == 2) {
+        } else if (random === 2) {
             defense_computer_counter++;
             if (defense_computer_counter > 3) {
                 run_player.innerHTML = "No more defense (3 = max)";
@@ -122,6 +131,20 @@ function automata_compute() {
             } else {
                 active_dfs_computer = 1;
                 dfs_computer.innerHTML = `${defense_computer_counter}`;
+            }
+        } else if (random === 3) {
+            count_heal_computer++;
+            if (count_heal_computer > 1) {
+                run_player.innerHTML = "No more heal ! (computer)";
+                setTimeout(() => { 
+                    animationSquare();
+                    computer_atk();
+                }, 3000);
+            } else {
+                count_heal_computer = 1;
+                lbl_heal_computer.innerHTML = `${count_heal_computer}`;
+                life_computer += 20;
+                displayer_life_computer.innerHTML = `Life: ${life_computer}`;
             }
         } else {
             console.log("Error random");
@@ -142,23 +165,46 @@ function userAttaker() {
         let damage = attackFunc();
         php_atk_player_1 = Math.floor(damage / 4);
         console.log(php_atk_player_1, "player_1 atk/4");
-        lblAtk.innerHTML = php_atk_player_1;
+        lblAtk_user.innerHTML = `${php_atk_player_1}`;
         life_computer -= php_atk_player_1;
-        displayer_life_2.innerHTML = `Life: ${life_computer}`;
+        displayer_life_computer.innerHTML = `Life: ${life_computer}`;
         active_dfs_computer = 0;
         setTimeout(automata_compute, 3000);
     } else {
         let damage = attackFunc();
         php_atk_player_1 = damage;
-        lblAtk.innerHTML = php_atk_player_1;
+        lblAtk_user.innerHTML = `${php_atk_player_1}`;
         life_computer -= php_atk_player_1;
-        displayer_life_2.innerHTML = `Life: ${life_computer}`;
+        displayer_life_computer.innerHTML = `Life: ${life_computer}`;
         setTimeout(automata_compute, 3000);
     }
     computerUserStatus();
 };
 
-btnAtk.addEventListener("click", () => userAttaker());
+btnAtk_user.addEventListener("click", () => userAttaker());
+
+//---------------------------------------------USER HEAL----------------------------------------------------------
+
+let count_heal_user = 0;
+
+function userHeal() {
+    count_heal_user++;
+    animationSquare();
+    changePlayer();
+    if (count_heal_user > 1) {
+        run_player.innerHTML = "No more heal !";
+    } else {
+        lbl_heal_user.innerHTML = `${count_heal_user}`;
+        life_user += 20;
+        displayer_life_user.innerHTML = `Life: ${life_user}`;
+        if (life_computer >= 0) {
+            setTimeout(automata_compute, 3000);
+        }
+    }
+};
+
+btn_heal_user.addEventListener("click", () => userHeal());
+
 
 //---------------------------------------------USER DEFENSE----------------------------------------------------------
 
@@ -173,7 +219,7 @@ function userDefense() {
     if (count_dfs_player > 3) {
         run_player.innerHTML = "No more defense (3 = max)";
     } else {
-        dfs_player_1.innerHTML = `${count_dfs_player}`;
+        dfs_player_user.innerHTML = `${count_dfs_player}`;
         active_dfs_user = 1;
         if (life_computer >= 0) {
             setTimeout(automata_compute, 3000);
