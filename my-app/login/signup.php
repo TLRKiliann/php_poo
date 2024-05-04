@@ -28,25 +28,28 @@
         </header>
 
         <main>
+
             <h2>Sign Up</h2>
+            
             <div class="container-form">
                 <div class="box-form">
                     <div class="sub-form">
-                        <form action="treatment.php" method="post">
 
+                        <form action="treatment.php" method="post">
                             <label for="username">Username :</label>
                             <input type="text" id="username" name="username" required><br><br>
 
-
                             <label for="email">Email :</label>
                             <input type="email" id="email" name="email" required><br><br>
-
 
                             <label for="password">Password :</label>
                             <input type="password" id="password" name="password" required><br><br>
 
                             <input type="submit" value="S'inscrire" class="submit-btn">
                         </form>
+                        <div class="signup-div">
+                            <a href="form.php" class="signup">Go to login</a>
+                        </div>
                     </div>
                 </div>
             </div>

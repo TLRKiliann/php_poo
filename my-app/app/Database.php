@@ -18,7 +18,6 @@
          * @param $db_port int 
          * @param $db_user string 
          * @param $db_passwd string
-         * @var $db_name = "mytable"
          */
         public function __construct($db_name, $db_host = '192.168.18.9',
             $db_port = 3306, $db_user = 'koala33', $db_passwd = 'Ko@l@tr3379') {

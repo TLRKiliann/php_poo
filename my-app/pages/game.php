@@ -4,14 +4,16 @@
     require_once('../app/Game.php');
     use App\Game;
 
-    //$display_uri = $_SERVER['REQUEST_URI'];
-    //var_dump($display_uri, "server_uri");
+    /*
+    $display_uri = $_SERVER['REQUEST_URI'];
+    var_dump($display_uri, "server_uri");
 
     $display_software = $_SERVER['SERVER_SOFTWARE'];
     var_dump($display_software, "server_software");
 
     $display_proto = $_SERVER['SERVER_PROTOCOL'];
     var_dump($display_proto, 'path_proto');
+    */
 
     $str_session_name = get_username_from_cookie();
 
@@ -22,8 +24,8 @@
     } 
 
     /*
-        It's preferable to retrieve cookie value 
-        rather than $_SESSION['username'];
+        !!! It's preferable to retrieve cookie value 
+        rather than $_SESSION['username']; !!!
     */
     $user = new Game($str_session_name, 0, 100);
     $computer = new Game("Computer", 0, 100);

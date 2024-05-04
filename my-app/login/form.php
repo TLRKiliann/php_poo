@@ -6,7 +6,7 @@
     //type - name - label
     $form = new App\Form();
     $form->add_fields("username", "text", "Name");
-    $form->add_fields("email", "email", "Email");
+    //$form->add_fields("email", "email", "Email");
     $form->add_fields("password", "password", "Password");
 
     //head
