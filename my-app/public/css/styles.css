@@ -63,13 +63,16 @@ main {
     padding: 20px;
 }
 
+.sub-form {
+    background: #242424;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #242424;
-    border-radius: 7px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     margin: auto;
 }
 
@@ -109,6 +112,25 @@ form {
     background: #f5f5f5;
     box-shadow: 0 0 0px rgba(255, 255, 255, 0.4);
     color: #000;
+}
+
+.signup-div {
+    display: flex;
+    justify-content: center;
+}
+
+.signup {
+    font-size: 0.8rem;
+    color: rgba(0, 255, 255, 0.5);
+    margin: 5px auto;
+}
+
+.signup:hover {
+    color: rgba(0, 255, 255, 0.8);
+}
+
+.signup:active {
+    color: #00ff00;
 }
 
 /*confirmation*/
@@ -218,15 +240,7 @@ form {
     color: #00ff00;
     padding: 7px 24px;
 }
-/*
-    font-weight: bold;
-    background: linear-gradient(30deg, rgba(0, 0, 0, 1), rgba(255, 105, 180, 0.2));
-    border: 1px solid #ff69b4;
-    border-radius: 7px;
-    box-shadow: 0 0 10px #ff69b4;
-    color: rgb(255, 119, 142);
-    padding: 7px 24px;
-*/
+
 #btn_atk_user:hover, #btn_atk_computer:hover {
     background: linear-gradient(30deg, rgba(16, 16, 16, 1), rgba(0, 255, 0, 1));
     border: 1px solid #161616;
