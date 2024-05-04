@@ -44,14 +44,20 @@
 
             <div class="container-form">
                 <div class="box-form">
-                    <?php 
-                        echo $form->generator();
-                    ?>
+                    <div class="sub-form">
+
+                        <?php 
+                            echo $form->generator();
+                            echo '<div class="signup-div">';
+                            echo '<a class="signup" href="signup.php">Sign Up</a>';
+                            echo '</div>';
+                        ?>
+
+                    </div>
                 </div>
+                
             </div>
-
-            <a href="signup.php">Sign Up</a>
-
+            
         </main>
     
     </body>
