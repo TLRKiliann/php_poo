@@ -18,7 +18,10 @@
         $p = 'home';
     }
 
-    $db = new App\Database('mytable');
+    /*
+        With home.php & article.php page
+        $db = new App\Database('mytable');
+    */
 
     //stock require into cache
     ob_start();
