@@ -1,12 +1,16 @@
 <?php
-    require_once('../app/Autoloader.php');
+/*     require_once('../app/Autoloader.php');
     App\Autoloader::register();
-    $db = new App\Database('mytable');
+    $db = new App\Database('mytable'); */
 ?>
     <h1>Home</h1>
 
     <div class="default-div">
-        <?php foreach ($db->query('SELECT * FROM articles', 'App\Table\Article') as $post): ?>
+        <?php
+            //1) foreach ($db->query('SELECT * FROM articles', 'App\Table\Article') as $post):
+            //2) foreach (App\App::getDatabase()->query('SELECT * FROM articles', 'App\Table\Article') as $post): 
+            foreach (\App\Table\Article::getLast() as $post):
+        ?>
 
             <li>
                 <a href="<?= $post->getUrl(); ?>">
