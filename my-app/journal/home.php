@@ -1,7 +1,10 @@
 <?php
-/*     require_once('../app/Autoloader.php');
+/*  
+    Don't need anymore autoloader 
+    require_once('../app/Autoloader.php');
     App\Autoloader::register();
-    $db = new App\Database('mytable'); */
+    $db = new App\Database('mytable'); 
+*/
 ?>
     <h1>Home</h1>
 
@@ -9,6 +12,7 @@
         <?php
             //1) foreach ($db->query('SELECT * FROM articles', 'App\Table\Article') as $post):
             //2) foreach (App\App::getDatabase()->query('SELECT * FROM articles', 'App\Table\Article') as $post): 
+            //Table->App->Database->function query()
             foreach (\App\Table\Article::getLast() as $post):
         ?>
 

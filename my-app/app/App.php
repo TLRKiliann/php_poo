@@ -12,6 +12,9 @@
 
         private static $database;
 
+        /**
+         * @return $database class (object)
+         */
         public static function getDatabase()
         {
             if (self::$database === null) {

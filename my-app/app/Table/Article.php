@@ -6,10 +6,10 @@
     class Article
     {
         /*
-        public function __get($params)
+        public function __get($key)
         {
-            var_dump($params)
-            $method = 'get' . ucfirst($params);
+            var_dump($key)
+            $method = 'get' . ucfirst($key); //depreciated
             $this->$key = $this->$method();
             return $this->$key;
         }
@@ -25,9 +25,7 @@
             return App::getDatabase()->prepare('SELECT * FROM articles WHERE id = ?', [$_GET['id']], __CLASS__, true); 
         }
 
-        /*
-            Avoid SQL injection by $_GET['id']
-        */
+        //Avoid SQL injection by $_GET['id']
         public function getUrl() {
             return '../public/index.php?p=article&id=' . $this->id;
         }

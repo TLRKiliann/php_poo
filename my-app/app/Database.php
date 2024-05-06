@@ -51,6 +51,13 @@
             return $data;
         }
         
+        /**
+         * @param $statement array
+         * @param $arg string
+         * @param $class_name string
+         * @param $one boolean
+         * @return $data array or object of arrays
+         */
         public function prepare($statement, $arg, $class_name, $one = false) {
             $req = $this-> getPdo()->prepare($statement);
             $req->execute($arg);

@@ -21,10 +21,6 @@
             foreach($this->fields as $field) {
                 $formHtml .= '<div class="input-lbl">';
                 $formHtml .= '<label>' . $field['label'] . ': </label>';
-                /*
-                    Just for fun you can test :
-                    $formHtml .= htmlspecialchars('<input type="' . $field['type'] . '" name="' . $field['name'] . '">');
-                */
                 $formHtml .= '<input type="' . $field['type'] . '" name="' . $field['name'] . '">';
                 $formHtml .= '</div>';
             }
@@ -52,6 +48,7 @@
     }
 
 /*
+        Simulation of database
         public function validate_credentials($username, $password): bool {
             $simulated_database = array(
                 array("username" => "Esteban", "password" => "123456"),
