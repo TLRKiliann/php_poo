@@ -30,9 +30,7 @@
 	$about = '../pages/about.php';
     $contact = '../pages/contact.php';
     $login = 'form.php';
-    $str_session_name = get_username_from_cookie();
 
-    var_dump($str_session_name, "C'est le cookie");
 ?>
 <!DOCTYPE html>
 <html>
