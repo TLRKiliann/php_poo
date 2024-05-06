@@ -21,7 +21,9 @@
     if (empty($str_session_name)) {
         header('Location: ../login/form.php');
         exit();
-    } 
+    } else {
+        var_dump($str_session_name, "C'est le cookie");
+    }
 
     /*
         !!! It's preferable to retrieve cookie value 
