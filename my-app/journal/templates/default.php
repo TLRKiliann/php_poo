@@ -15,7 +15,7 @@
     //routes
     $login = '../login/form.php';
 	$about = '../pages/about.php';
-    $home = '../public/index.php?p=home';
+    $home = 'index.php?p=home';
     $game = '../pages/game.php';
 	$contact = '../pages/contact.php';
 	$str_session_name = get_username_from_cookie();

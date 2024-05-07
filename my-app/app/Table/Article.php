@@ -27,7 +27,7 @@
 
         //Avoid SQL injection by $_GET['id']
         public function getUrl() {
-            return '../public/index.php?p=article&id=' . $this->id;
+            return 'index.php?p=article&id=' . $this->id;
         }
     
         public function getExtrait() {

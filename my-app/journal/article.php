@@ -7,4 +7,4 @@
 
     <p><?= $post->content ?></p>
 
-    <p><a href="<?= '../public/index.php?p=home'; ?>">Go back</a></p>
+    <p><a href="<?= 'index.php?p=home'; ?>">Go back</a></p>
